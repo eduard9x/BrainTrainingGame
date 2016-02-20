@@ -8,7 +8,7 @@
 
 <fragment
         android:id="@+id/fragment_difficulty"
-        class="home.eduard.braintraininggame.DifficultyActivity"
+        class="home.eduard.braintraininggame.DifficultyFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
