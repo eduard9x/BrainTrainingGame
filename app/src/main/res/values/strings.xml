@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BTG</string>
+    <string name="long_app_name">Brain Training Game</string>
+    <string name="action_settings">Settings</string>
+    <string name="continue_label">Continue</string>
+    <string name="new_game_label">New Game</string>
+    <string name="about_label">About</string>
+    <string name="ok_label">OK</string>
+    <string name="about_title">Game Instructions</string>
+    <string name="about_text">
+        \ This game is played using the keypad. The aim is to answer mathematical questions as fast as possible.\n\ \n\ If the result is NOT a whole number, it should be rounded to the closest one.\n\ \n\
+        For example, the expression 10/3*2 should evaluate to 6, because 10/3 is 3.333 which is rounded to 3, then multiplied by 2, giving the overall result of 6.
+    </string>
+    <string name="exit_label">Exit</string>
+    <string name="difficulty_label">Select difficulty level:</string>
+    <string name="novice_label">Novice</string>
+    <string name="easy_label">Easy</string>
+    <string name="medium_label">Medium</string>
+    <string name="guru_label">Guru</string>
+</resources>
