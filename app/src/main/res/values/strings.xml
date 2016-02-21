@@ -17,4 +17,24 @@
     <string name="easy_label">Easy</string>
     <string name="medium_label">Medium</string>
     <string name="guru_label">Guru</string>
+    <string name="keypad_1">1</string>
+    <string name="keypad_2">2</string>
+    <string name="keypad_3">3</string>
+    <string name="keypad_4">4</string>
+    <string name="keypad_5">5</string>
+    <string name="keypad_6">6</string>
+    <string name="keypad_7">7</string>
+    <string name="keypad_8">8</string>
+    <string name="keypad_9">9</string>
+    <string name="keypad_0">0</string>
+    <string name="keypad_DEL">DEL</string>
+    <string name="keypad_hash">#</string>
+    <string name="keypad_minus">–</string>
+    <string name="display_guess">Guess:</string>
+    <string name="display_maths">2+6*8/3/3=</string>
+    <string name="display_answer">?</string>
+    <string name="display_hint">Hint:</string>
+    <string name="display_hint_ending">None (4 left)</string>
+    <string name="display_time_remaining">Time Remaining</string>
+    <string name="display_time">10 secs</string>
 </resources>

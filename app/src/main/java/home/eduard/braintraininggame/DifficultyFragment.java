@@ -24,25 +24,38 @@ public class DifficultyFragment extends Fragment {
         View mediumButton = rootView.findViewById(R.id.medium_button);
         View guruButton = rootView.findViewById(R.id.guru_button);
 
-        noviceButton.setOnClickListener(new View.OnClickListener() {
+        noviceButton.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-                AlertDialog.Builder builder =
-                        new AlertDialog.Builder(getActivity());
-                builder.setTitle(R.string.about_title);
-                builder.setMessage(R.string.about_text);
-                builder.setCancelable(false);
-                builder.setPositiveButton(R.string.ok_label,
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface,
-                                                int i) {
-                                // nothing
-                            }
-                        });
-                mDialog = builder.show();
+            public void onClick(View view){
+                Intent intent = new Intent(getActivity(), GameActivity.class);
+                getActivity().startActivity(intent);
             }
         });
+
+        easyButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(getActivity(), GameActivity.class);
+                getActivity().startActivity(intent);
+            }
+        });
+
+        mediumButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(getActivity(), GameActivity.class);
+                getActivity().startActivity(intent);
+            }
+        });
+
+        guruButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(getActivity(), GameActivity.class);
+                getActivity().startActivity(intent);
+            }
+        });
+
         return rootView;
     }
 
