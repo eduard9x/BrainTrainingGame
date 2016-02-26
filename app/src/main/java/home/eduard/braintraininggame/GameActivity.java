@@ -2,9 +2,11 @@ package home.eduard.braintraininggame;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 public class GameActivity extends Activity {
-    protected int val;
+    protected int level;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -12,21 +14,16 @@ public class GameActivity extends Activity {
         setContentView(R.layout.activity_game);
         String intentVal = getIntent().getStringExtra("DIFFICULTY");
 
-        val = Integer.parseInt(intentVal);
+        View root = findViewById(android.R.id.content);
 
-        switch (val) {
-            case 0:
-                novice();
-                break;
-        }
+        level = Integer.parseInt(intentVal);
+        Game myGame = new Game(level);
+        myGame.start();
+        //start method will generate a question
 
+        TextView txt = (TextView) root.findViewById(R.id.guess);
+        txt.setText(myGame.getChallenge());
+        //this will set the question to the TextView
     }
 
-    public void novice() {
-
-        double number = Math.floor(Math.random() * 2 + 2);
-        int operations = (int) number;
-
-
-    }
 }
