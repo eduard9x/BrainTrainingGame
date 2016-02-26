@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:elevation="@dimen/elevation_low"
-    android:padding="@dimen/keypad_padding"
+    android:layout_gravity="bottom"
     tools:context=".GameActivity">
 
     <Button android:id="@+id/small1" style="@style/KeypadButton"

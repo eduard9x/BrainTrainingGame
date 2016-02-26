@@ -12,11 +12,13 @@
         For example, the expression 10/3*2 should evaluate to 6, because 10/3 is 3.333 which is rounded to 3, then multiplied by 2, giving the overall result of 6.
     </string>
     <string name="exit_label">Exit</string>
-    <string name="difficulty_label">Select difficulty level:</string>
+    <string name="difficulty_label">Select difficulty level</string>
+    <string name="difficulty_notif">Prove yourself how good you really are.</string>
     <string name="novice_label">Novice</string>
     <string name="easy_label">Easy</string>
     <string name="medium_label">Medium</string>
     <string name="guru_label">Guru</string>
+    <string name="start_label">Start!</string>
     <string name="keypad_1">1</string>
     <string name="keypad_2">2</string>
     <string name="keypad_3">3</string>
@@ -30,11 +32,17 @@
     <string name="keypad_DEL">DEL</string>
     <string name="keypad_hash">#</string>
     <string name="keypad_minus">–</string>
-    <string name="display_guess">Guess:</string>
-    <string name="display_maths">2+6*8/3/3=</string>
-    <string name="display_answer">?</string>
+    <string name="display_guess">Guess:2+6*8/3/3=</string>
+    <string name="display_answer">=?</string>
     <string name="display_hint">Hint:</string>
     <string name="display_hint_ending">None (4 left)</string>
-    <string name="display_time_remaining">Time Remaining</string>
+    <string name="display_time_remaining">Time Remaining: </string>
     <string name="display_time">10 secs</string>
+    <string name="game_label">Brain Training Game</string>
+    <string name="score">Score:</string>
+    <string name="correct">Correct!</string>
+    <string name="wrong">Wrong!</string>
+    <string name="hint_less">Hint:Less</string>
+    <string name="hint_greater">Hint:Greater</string>
+
 </resources>

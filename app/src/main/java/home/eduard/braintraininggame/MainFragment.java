@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 public class MainFragment extends Fragment {
 
@@ -26,19 +27,42 @@ public class MainFragment extends Fragment {
         newGameButton.setOnClickListener(new View.OnClickListener(){
             @Override
         public void onClick(View view){
-                Intent intent = new Intent(getActivity(), DifficultyActivity.class);
-                getActivity().startActivity(intent);
+
+                AlertDialog.Builder builder =
+                        new AlertDialog.Builder(getActivity());
+                builder.setTitle(R.string.difficulty_label);
+                builder.setItems(new CharSequence[]{"Novice", "Easy", "Medium", "Guru"}, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which) {
+                            case 0:
+                                createIntent(which);
+                                break;
+                            case 1:
+                                createIntent(which);
+                                break;
+                            case 2:
+                                createIntent(which);
+                                break;
+                            case 3:
+                                createIntent(which);
+                                break;
+                        }
+                    }
+                });
+                builder.setCancelable(false);
+                mDialog = builder.show();
             }
         });
 
-        continueButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-        public void onClick(View view){
-                Intent intent = new Intent(getActivity(), GameActivity.class);
-//                intent.putExtra(GameActivity.KEY_RESTORE,true);
-                getActivity().startActivity(intent);
-            }
-        });
+//        continueButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//        public void onClick(View view){
+//                Intent intent = new Intent(getActivity(), GameActivity.class);
+////                intent.putExtra(GameActivity.KEY_RESTORE,true);
+//                getActivity().startActivity(intent);
+//            }
+//        });
 
         aboutButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +84,15 @@ public class MainFragment extends Fragment {
             }
         });
         return rootView;
+    }
+
+    void createIntent(int difficulty){
+
+        Intent intent_difficulty = new Intent(getActivity(), GameActivity.class);
+        intent_difficulty.putExtra("DIFFICULTY",Integer.toString(difficulty));
+        getActivity().startActivity(intent_difficulty);
+
+//        System.out.println(difficulty);
     }
 
     @Override

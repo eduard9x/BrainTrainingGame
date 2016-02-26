@@ -19,8 +19,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DifficultyActivity"
-            android:label="@string/difficulty_label"
+            android:name=".GameActivity"
+            android:label="@string/game_label"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>

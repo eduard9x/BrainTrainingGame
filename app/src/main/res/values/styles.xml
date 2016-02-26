@@ -5,12 +5,20 @@
     </style>
 
     <style name="KeypadButton">
-        <item name="android:layout_width">@dimen/button_size</item>
-        <item name="android:layout_height">@dimen/button_size</item>
+        <item name="android:layout_width">@dimen/button_width</item>
+        <item name="android:layout_height">@dimen/button_height</item>
         <item name="android:layout_margin">@dimen/button_margin</item>
         <item name="android:background">@drawable/btn_orange</item>
         <item name="android:padding">@dimen/button_padding</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAlignment">center</item>
+
         <item name="android:scaleType">centerCrop</item>
         <!--<item name="android:src">@drawable/button</item>-->
     </style>
+
+    <style name="keypad">
+        <item name="android:layout_gravity">bottom</item>
+    </style>
+
 </resources>
