@@ -3,14 +3,14 @@ package home.eduard.braintraininggame;
 import android.view.View;
 import android.widget.TextView;
 
-public class Game {
+public class Question {
 
     private int level;
     private final String[] oper = {"*", "/", "+", "-"};
     private final int maximumNumber = 10;
     private String challenge;
 
-    public Game(int level) {
+    public Question(int level) {
         this.level = level;
         challenge = "Guess:";
     }

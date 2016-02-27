@@ -17,12 +17,12 @@ public class GameActivity extends Activity {
         View root = findViewById(android.R.id.content);
 
         level = Integer.parseInt(intentVal);
-        Game myGame = new Game(level);
-        myGame.start();
+        Question firstQuestion = new Question(level);
+        firstQuestion.start();
         //start method will generate a question
 
         TextView txt = (TextView) root.findViewById(R.id.guess);
-        txt.setText(myGame.getChallenge());
+        txt.setText(firstQuestion.getChallenge());
         //this will set the question to the TextView
     }
 
