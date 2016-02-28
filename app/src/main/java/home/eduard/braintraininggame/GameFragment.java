@@ -2,15 +2,10 @@ package home.eduard.braintraininggame;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
-import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 
 public class GameFragment extends Fragment {
@@ -24,6 +19,7 @@ public class GameFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.fragment_game, container, false);
         // Handle buttons here...
 
+        //region Keypad Declarations
         final View button1 = rootView.findViewById(R.id.button1);
         final View button2 = rootView.findViewById(R.id.button2);
         final View button3 = rootView.findViewById(R.id.button3);
@@ -37,21 +33,9 @@ public class GameFragment extends Fragment {
         final View buttonDel = rootView.findViewById(R.id.buttonDel);
         final View buttonHash = rootView.findViewById(R.id.buttonHash);
         final View buttonMinus = rootView.findViewById(R.id.buttonMinus);
+        //endregion
 
-//        final View answer = rootView.findViewById(R.id.answer);
-
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("Answer", "=");
-        editor.apply();
-
-
-//        answer.setOnTouchListener(new View.OnTouchListener() {
-//            public boolean onTouch (View v, MotionEvent event) {
-//                return true; // the listener has consumed the event
-//            }
-//        });
-
+        //region Button1
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +46,8 @@ public class GameFragment extends Fragment {
                     test.setText(toSet + "1");
             }
         });
-
+        //endregion
+        //region Button2
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,7 +58,8 @@ public class GameFragment extends Fragment {
                     test.setText(toSet + "2");
             }
         });
-
+        //endregion
+        //region Button3
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,7 +70,8 @@ public class GameFragment extends Fragment {
                     test.setText(toSet + "3");
             }
         });
-
+        //endregion
+        //region Button4
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,7 +82,8 @@ public class GameFragment extends Fragment {
                     test.setText(toSet + "4");
             }
         });
-
+        //endregion
+        //region Button5
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,7 +94,8 @@ public class GameFragment extends Fragment {
                     test.setText(toSet + "5");
             }
         });
-
+        //endregion
+        //region Button6
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -117,7 +106,8 @@ public class GameFragment extends Fragment {
                     test.setText(toSet + "6");
             }
         });
-
+        //endregion
+        //region Button7
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -128,7 +118,8 @@ public class GameFragment extends Fragment {
                     test.setText(toSet + "7");
             }
         });
-
+        //endregion
+        //region Button8
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -139,7 +130,8 @@ public class GameFragment extends Fragment {
                     test.setText(toSet + "8");
             }
         });
-
+        //endregion
+        //region Button9
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -150,7 +142,8 @@ public class GameFragment extends Fragment {
                     test.setText(toSet + "9");
             }
         });
-
+        //endregion
+        //region Button0
         button0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -161,7 +154,8 @@ public class GameFragment extends Fragment {
                     test.setText(toSet + "0");
             }
         });
-
+        //endregion
+        //region ButtonDel
         buttonDel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -174,7 +168,8 @@ public class GameFragment extends Fragment {
                 test.setText(toSet);
             }
         });
-
+        //endregion
+        //region ButtonMinus
         buttonMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -184,17 +179,23 @@ public class GameFragment extends Fragment {
                 test.setText(toSet);
             }
         });
-
+        //endregion
+        //region ButtonHash
         buttonHash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final TextView test = (TextView) rootView.findViewById(R.id.answer);
-                String toSet = (String) test.getText();
-                System.out.println("Go next with: " + toSet);
+                goNextQuestion(rootView);
             }
         });
+        //endregion
 
         return rootView;
+    }
+
+    public void goNextQuestion(View rootView){
+        final TextView test = (TextView) rootView.findViewById(R.id.answer);
+        String toSet = (String) test.getText();
+        System.out.println("Go next with: " + toSet);
     }
 
     @Override

@@ -39,7 +39,7 @@
     <string name="display_time_remaining">Time Remaining: </string>
     <string name="display_time">10 secs</string>
     <string name="game_label">Brain Training Game</string>
-    <string name="score">Score:</string>
+    <string name="score">Score:0s</string>
     <string name="correct">Correct!</string>
     <string name="wrong">Wrong!</string>
     <string name="hint_less">Hint:Less</string>
