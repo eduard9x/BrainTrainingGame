@@ -3,21 +3,19 @@ package home.eduard.braintraininggame;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
-
 public class GameFragment extends Fragment {
 
     private AlertDialog mDialog;
     private final int MaximumDigitsAnswer = 6;
+    private int numberOfQuestions = 0;
+    private CountDownTimer myTimer;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -195,11 +193,47 @@ public class GameFragment extends Fragment {
         });
         //endregion
 
+        doTimer(rootView);
+
         return rootView;
     }
 
     public void goNextQuestion(View rootView) {
-        compareAnswer(rootView);
+
+//        todo need to check how to add the 4 hints stuff
+        //todo need to remove the visible/invisible condition. not enough.
+
+        System.out.println("here ");
+
+        TextView correct = (TextView) rootView.findViewById(R.id.correct);
+        int correctVisible = correct.getVisibility();
+        TextView wrong = (TextView) rootView.findViewById(R.id.wrong);
+        int wrongVisible = wrong.getVisibility();
+
+        if (correctVisible == 4 && wrongVisible == 4) {//both invisible - first time pressed
+            compareAnswer(rootView);
+            correctVisible = correct.getVisibility();
+            if (correctVisible == 0)
+                myTimer.cancel();
+            //todo need to make it cancel only when the answer is correct -- needs testing properly
+        } else {
+            correct.setVisibility(View.INVISIBLE);
+            wrong.setVisibility(View.INVISIBLE);
+
+            numberOfQuestions++;
+            Question nextQuestion = new Question(3);
+            nextQuestion.start();
+
+            TextView txt = (TextView) rootView.findViewById(R.id.guess);
+            txt.setText(nextQuestion.getChallenge());
+            //this will set the question to the TextView
+
+            txt = (TextView) rootView.findViewById(R.id.operations);
+            txt.setText(Integer.toString(nextQuestion.getOperations()));
+            //this will save the number of operations in an invisible text field
+        }
+
+
     }
 
     @Override
@@ -236,32 +270,30 @@ public class GameFragment extends Fragment {
 
         try {
             userAnswer = Integer.parseInt(userAnswerRough);
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e);
-            userAnswer=-999999;
+            userAnswer = -999999;
         }
 
         int timeRemaining = 7;
         doScore(userAnswer, goodAnswer, timeRemaining, rootView);
 
-        //todo need to create Correct and Wrong methods
     }
 
-    public void doScore(int userAnswer, int goodAnswer, int timeRemaining, View rootView){
+    public void doScore(int userAnswer, int goodAnswer, int timeRemaining, View rootView) {
 
-        if(goodAnswer==userAnswer)
-        {
+        if (goodAnswer == userAnswer) {
             TextView ScoreView = (TextView) rootView.findViewById(R.id.score);
             String scoreRough = (String) ScoreView.getText();
             //this will have a string as-> Score:242
             int column = scoreRough.indexOf(":");
-            int score = Integer.parseInt(scoreRough.substring(column+1, scoreRough.length()));
+            int score = Integer.parseInt(scoreRough.substring(column + 1, scoreRough.length()));
             //get the number after the column ':'
 
-            int toAdd = (int) Math.round((double) 100/(10-timeRemaining));
+            int toAdd = (int) Math.round((double) 100 / (10 - timeRemaining));
             //rounding the number in order to get 100/(10-4) = 100/6 = 17 points
 
-            score+= toAdd;
+            score += toAdd;
             ScoreView.setText("Score:" + Integer.toString(score));
             TextView correct = (TextView) rootView.findViewById(R.id.correct);
             correct.setVisibility(View.VISIBLE);
@@ -272,22 +304,20 @@ public class GameFragment extends Fragment {
             less.setVisibility(View.INVISIBLE);
             TextView greater = (TextView) rootView.findViewById(R.id.hint_greater);
             greater.setVisibility(View.INVISIBLE);
-        }
-        else{
+        } else {
             Switch Hints = (Switch) rootView.findViewById(R.id.Hints);
-            if(Hints.isChecked())
-            if(goodAnswer<userAnswer){
-                TextView less = (TextView) rootView.findViewById(R.id.hint_less);
-                less.setVisibility(View.VISIBLE);
-                TextView greater = (TextView) rootView.findViewById(R.id.hint_greater);
-                greater.setVisibility(View.INVISIBLE);
-            }
-            else{
-                TextView less = (TextView) rootView.findViewById(R.id.hint_less);
-                less.setVisibility(View.INVISIBLE);
-                TextView greater = (TextView) rootView.findViewById(R.id.hint_greater);
-                greater.setVisibility(View.VISIBLE);
-            }
+            if (Hints.isChecked())
+                if (goodAnswer < userAnswer) {
+                    TextView less = (TextView) rootView.findViewById(R.id.hint_less);
+                    less.setVisibility(View.VISIBLE);
+                    TextView greater = (TextView) rootView.findViewById(R.id.hint_greater);
+                    greater.setVisibility(View.INVISIBLE);
+                } else {
+                    TextView less = (TextView) rootView.findViewById(R.id.hint_less);
+                    less.setVisibility(View.INVISIBLE);
+                    TextView greater = (TextView) rootView.findViewById(R.id.hint_greater);
+                    greater.setVisibility(View.VISIBLE);
+                }
             TextView wrong = (TextView) rootView.findViewById(R.id.wrong);
             wrong.setVisibility(View.VISIBLE);
             TextView correct = (TextView) rootView.findViewById(R.id.correct);
@@ -295,4 +325,19 @@ public class GameFragment extends Fragment {
         }
     }
 
+    public void doTimer(final View rootView) {
+        myTimer = new CountDownTimer(10000, 1000) {
+            final TextView timer = (TextView) rootView.findViewById(R.id.time);
+
+            public void onTick(long millisUntilFinished) {
+                timer.setText(millisUntilFinished / 1000 + " secs");
+            }
+
+            public void onFinish() {
+                TextView wrong = (TextView) rootView.findViewById(R.id.wrong);
+                wrong.setVisibility(View.INVISIBLE);
+                goNextQuestion(rootView);
+            }
+        }.start();
+    }
 }

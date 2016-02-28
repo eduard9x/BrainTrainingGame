@@ -2,11 +2,11 @@ package home.eduard.braintraininggame;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.TextView;
 
 public class GameActivity extends Activity {
-    protected int level;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +16,7 @@ public class GameActivity extends Activity {
 
         View root = findViewById(android.R.id.content);
 
-        level = Integer.parseInt(intentVal);
+        int level = Integer.parseInt(intentVal);
         Question firstQuestion = new Question(level);
         firstQuestion.start();
         //start method will generate a question
