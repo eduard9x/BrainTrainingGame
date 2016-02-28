@@ -32,7 +32,7 @@
     <string name="keypad_DEL">DEL</string>
     <string name="keypad_hash">#</string>
     <string name="keypad_minus">–</string>
-    <string name="display_guess">Guess:2+6*8/3/3=</string>
+    <string name="display_guess">Guess:2+6*8/3/3</string>
     <string name="display_answer">=?</string>
     <string name="display_hint">Hint:</string>
     <string name="display_hint_ending">None (4 left)</string>
