@@ -3,10 +3,13 @@ package home.eduard.braintraininggame;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class GameFragment extends Fragment {
 
@@ -163,7 +166,7 @@ public class GameFragment extends Fragment {
                 String toSet = (String) test.getText();
                 if (toSet.compareTo("=?") == 0) toSet = "=";
                 else if (!(toSet.compareTo("=") == 0)) {
-                    toSet = toSet.substring(0,toSet.length()-1);
+                    toSet = toSet.substring(0, toSet.length() - 1);
                 }
                 test.setText(toSet);
             }
@@ -192,10 +195,12 @@ public class GameFragment extends Fragment {
         return rootView;
     }
 
-    public void goNextQuestion(View rootView){
+    public void goNextQuestion(View rootView) {
         final TextView test = (TextView) rootView.findViewById(R.id.answer);
         String toSet = (String) test.getText();
         System.out.println("Go next with: " + toSet);
+
+        compareAnswer(rootView);
     }
 
     @Override
@@ -205,6 +210,26 @@ public class GameFragment extends Fragment {
         // Get rid of the about dialog if it's still up
         if (mDialog != null)
             mDialog.dismiss();
+    }
+
+    public void compareAnswer(View rootView) {
+        final TextView ans = (TextView) rootView.findViewById(R.id.answer);
+        final TextView quest = (TextView) rootView.findViewById(R.id.guess);
+        String userAnswer = (String) ans.getText();
+        String question = (String) quest.getText();
+
+        userAnswer = userAnswer.substring(1, userAnswer.length());
+        //1 because I want to skip the '=' sign
+        question = question.substring(6, question.length());
+        //6 because I want to skip the 'Guess:' String
+
+        System.out.println("Answer: " + userAnswer);
+        System.out.println("Question: " + question);
+
+        Answer goodAnswer = new Answer("15*2/7+32/7-27/4", 13);
+        System.out.println("Good answer: " + goodAnswer.solve());
+
+
     }
 
 }
