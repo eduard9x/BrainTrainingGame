@@ -215,6 +215,8 @@ public class GameFragment extends Fragment {
     public void compareAnswer(View rootView) {
         final TextView ans = (TextView) rootView.findViewById(R.id.answer);
         final TextView quest = (TextView) rootView.findViewById(R.id.guess);
+        final TextView getLimit = (TextView) rootView.findViewById(R.id.operations);
+
         String userAnswer = (String) ans.getText();
         String question = (String) quest.getText();
 
@@ -223,10 +225,9 @@ public class GameFragment extends Fragment {
         question = question.substring(6, question.length());
         //6 because I want to skip the 'Guess:' String
 
-        System.out.println("Answer: " + userAnswer);
-        System.out.println("Question: " + question);
+        int limit = Integer.parseInt((String) getLimit.getText());
 
-        Answer goodAnswer = new Answer("15*2/7+32/7-27/4", 13);
+        Answer goodAnswer = new Answer(question, limit);
         System.out.println("Good answer: " + goodAnswer.solve());
 
 

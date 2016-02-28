@@ -24,6 +24,10 @@ public class GameActivity extends Activity {
         TextView txt = (TextView) root.findViewById(R.id.guess);
         txt.setText(firstQuestion.getChallenge());
         //this will set the question to the TextView
+
+        txt = (TextView) root.findViewById(R.id.operations);
+        txt.setText(Integer.toString(firstQuestion.getOperations()));
+        //this will save the number of operations in an invisible text field
     }
 
 }

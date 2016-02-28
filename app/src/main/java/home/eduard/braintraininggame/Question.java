@@ -9,6 +9,7 @@ public class Question {
     private final String[] oper = {"*", "/", "+", "-"};
     private final int maximumNumber = 10;
     private String challenge;
+    private int operations;
 
     public Question(int level) {
         this.level = level;
@@ -34,26 +35,26 @@ public class Question {
     }
 
     public void novice() {
-        int operations = 2;
+        operations = 2;
         createChallenge(operations);
     }
 
 
     public void easy() {
         double number = Math.floor(Math.random() * 2 + 2);
-        int operations = (int) number;
+        operations = (int) number;
         createChallenge(operations);
     }
 
     public void medium() {
         double number = Math.floor(Math.random() * 3 + 2);
-        int operations = (int) number;
+        operations = (int) number;
         createChallenge(operations);
     }
 
     public void guru() {
         double number = Math.floor(Math.random() * 5 + 2);
-        int operations = (int) number;
+        operations = (int) number;
         createChallenge(operations);
     }
 
@@ -115,4 +116,7 @@ public class Question {
         return randomNumber;
     }
 
+    public int getOperations() {
+        return 2*operations-1;
+    }
 }
