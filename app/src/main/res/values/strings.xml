@@ -42,7 +42,7 @@
     <string name="score">Score:0</string>
     <string name="correct">Correct!</string>
     <string name="wrong">Wrong!</string>
-    <string name="hint_less">Hint:Less</string>
-    <string name="hint_greater">Hint:Greater</string>
+    <string name="hint_less">Hint: Less</string>
+    <string name="hint_greater">Hint: Greater</string>
     <string name="operations">0</string>
 </resources>

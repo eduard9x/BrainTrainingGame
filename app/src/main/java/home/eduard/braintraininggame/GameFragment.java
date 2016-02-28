@@ -7,7 +7,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Switch;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -196,10 +199,6 @@ public class GameFragment extends Fragment {
     }
 
     public void goNextQuestion(View rootView) {
-        final TextView test = (TextView) rootView.findViewById(R.id.answer);
-        String toSet = (String) test.getText();
-        System.out.println("Go next with: " + toSet);
-
         compareAnswer(rootView);
     }
 
@@ -213,24 +212,87 @@ public class GameFragment extends Fragment {
     }
 
     public void compareAnswer(View rootView) {
+
+        int userAnswer;
+
         final TextView ans = (TextView) rootView.findViewById(R.id.answer);
         final TextView quest = (TextView) rootView.findViewById(R.id.guess);
         final TextView getLimit = (TextView) rootView.findViewById(R.id.operations);
 
-        String userAnswer = (String) ans.getText();
+        String userAnswerRough = (String) ans.getText();
         String question = (String) quest.getText();
 
-        userAnswer = userAnswer.substring(1, userAnswer.length());
+        userAnswerRough = userAnswerRough.substring(1, userAnswerRough.length());
         //1 because I want to skip the '=' sign
+
         question = question.substring(6, question.length());
         //6 because I want to skip the 'Guess:' String
 
         int limit = Integer.parseInt((String) getLimit.getText());
 
-        Answer goodAnswer = new Answer(question, limit);
-        System.out.println("Good answer: " + goodAnswer.solve());
+        Answer goodAnswerRough = new Answer(question, limit);
+        int goodAnswer = goodAnswerRough.solve();
+        System.out.println("Good answer: " + goodAnswer);
 
+        try {
+            userAnswer = Integer.parseInt(userAnswerRough);
+        }catch(Exception e){
+            System.out.println(e);
+            userAnswer=-999999;
+        }
 
+        int timeRemaining = 7;
+        doScore(userAnswer, goodAnswer, timeRemaining, rootView);
+
+        //todo need to create Correct and Wrong methods
+    }
+
+    public void doScore(int userAnswer, int goodAnswer, int timeRemaining, View rootView){
+
+        if(goodAnswer==userAnswer)
+        {
+            TextView ScoreView = (TextView) rootView.findViewById(R.id.score);
+            String scoreRough = (String) ScoreView.getText();
+            //this will have a string as-> Score:242
+            int column = scoreRough.indexOf(":");
+            int score = Integer.parseInt(scoreRough.substring(column+1, scoreRough.length()));
+            //get the number after the column ':'
+
+            int toAdd = (int) Math.round((double) 100/(10-timeRemaining));
+            //rounding the number in order to get 100/(10-4) = 100/6 = 17 points
+
+            score+= toAdd;
+            ScoreView.setText("Score:" + Integer.toString(score));
+            TextView correct = (TextView) rootView.findViewById(R.id.correct);
+            correct.setVisibility(View.VISIBLE);
+            TextView wrong = (TextView) rootView.findViewById(R.id.wrong);
+            wrong.setVisibility(View.INVISIBLE);
+
+            TextView less = (TextView) rootView.findViewById(R.id.hint_less);
+            less.setVisibility(View.INVISIBLE);
+            TextView greater = (TextView) rootView.findViewById(R.id.hint_greater);
+            greater.setVisibility(View.INVISIBLE);
+        }
+        else{
+            Switch Hints = (Switch) rootView.findViewById(R.id.Hints);
+            if(Hints.isChecked())
+            if(goodAnswer<userAnswer){
+                TextView less = (TextView) rootView.findViewById(R.id.hint_less);
+                less.setVisibility(View.VISIBLE);
+                TextView greater = (TextView) rootView.findViewById(R.id.hint_greater);
+                greater.setVisibility(View.INVISIBLE);
+            }
+            else{
+                TextView less = (TextView) rootView.findViewById(R.id.hint_less);
+                less.setVisibility(View.INVISIBLE);
+                TextView greater = (TextView) rootView.findViewById(R.id.hint_greater);
+                greater.setVisibility(View.VISIBLE);
+            }
+            TextView wrong = (TextView) rootView.findViewById(R.id.wrong);
+            wrong.setVisibility(View.VISIBLE);
+            TextView correct = (TextView) rootView.findViewById(R.id.correct);
+            correct.setVisibility(View.INVISIBLE);
+        }
     }
 
 }
