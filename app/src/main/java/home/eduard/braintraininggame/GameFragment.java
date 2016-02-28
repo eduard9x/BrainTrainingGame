@@ -16,6 +16,7 @@ import android.widget.TextView;
 public class GameFragment extends Fragment {
 
     private AlertDialog mDialog;
+    private final int MaximumDigitsAnswer = 6;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -25,8 +26,24 @@ public class GameFragment extends Fragment {
 
         final View button1 = rootView.findViewById(R.id.button1);
         final View button2 = rootView.findViewById(R.id.button2);
+        final View button3 = rootView.findViewById(R.id.button3);
+        final View button4 = rootView.findViewById(R.id.button4);
+        final View button5 = rootView.findViewById(R.id.button5);
+        final View button6 = rootView.findViewById(R.id.button6);
+        final View button7 = rootView.findViewById(R.id.button7);
+        final View button8 = rootView.findViewById(R.id.button8);
+        final View button9 = rootView.findViewById(R.id.button9);
+        final View button0 = rootView.findViewById(R.id.button0);
+        final View buttonDel = rootView.findViewById(R.id.buttonDel);
+        final View buttonHash = rootView.findViewById(R.id.buttonHash);
+        final View buttonMinus = rootView.findViewById(R.id.buttonMinus);
+
 //        final View answer = rootView.findViewById(R.id.answer);
 
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("Answer", "=");
+        editor.apply();
 
 
 //        answer.setOnTouchListener(new View.OnTouchListener() {
@@ -38,27 +55,142 @@ public class GameFragment extends Fragment {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("Name","Harneet");
-                editor.apply();
+                final TextView test = (TextView) rootView.findViewById(R.id.answer);
+                String toSet = (String) test.getText();
+                if (toSet.compareTo("=?") == 0) toSet = "=";
+                if (toSet.length() < MaximumDigitsAnswer)
+                    test.setText(toSet + "1");
             }
         });
 
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-                String name = preferences.getString("Name", "");
-//                if(!name.equalsIgnoreCase(""))
-//                {
-//                    name = name + "  Sethi";  /* Edit the value here*/
-//                }
-
                 final TextView test = (TextView) rootView.findViewById(R.id.answer);
-                test.setText(test.getText() + name);
+                String toSet = (String) test.getText();
+                if (toSet.compareTo("=?") == 0) toSet = "=";
+                if (toSet.length() < MaximumDigitsAnswer)
+                    test.setText(toSet + "2");
+            }
+        });
 
-                System.out.println(name);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final TextView test = (TextView) rootView.findViewById(R.id.answer);
+                String toSet = (String) test.getText();
+                if (toSet.compareTo("=?") == 0) toSet = "=";
+                if (toSet.length() < MaximumDigitsAnswer)
+                    test.setText(toSet + "3");
+            }
+        });
+
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final TextView test = (TextView) rootView.findViewById(R.id.answer);
+                String toSet = (String) test.getText();
+                if (toSet.compareTo("=?") == 0) toSet = "=";
+                if (toSet.length() < MaximumDigitsAnswer)
+                    test.setText(toSet + "4");
+            }
+        });
+
+        button5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final TextView test = (TextView) rootView.findViewById(R.id.answer);
+                String toSet = (String) test.getText();
+                if (toSet.compareTo("=?") == 0) toSet = "=";
+                if (toSet.length() < MaximumDigitsAnswer)
+                    test.setText(toSet + "5");
+            }
+        });
+
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final TextView test = (TextView) rootView.findViewById(R.id.answer);
+                String toSet = (String) test.getText();
+                if (toSet.compareTo("=?") == 0) toSet = "=";
+                if (toSet.length() < MaximumDigitsAnswer)
+                    test.setText(toSet + "6");
+            }
+        });
+
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final TextView test = (TextView) rootView.findViewById(R.id.answer);
+                String toSet = (String) test.getText();
+                if (toSet.compareTo("=?") == 0) toSet = "=";
+                if (toSet.length() < MaximumDigitsAnswer)
+                    test.setText(toSet + "7");
+            }
+        });
+
+        button8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final TextView test = (TextView) rootView.findViewById(R.id.answer);
+                String toSet = (String) test.getText();
+                if (toSet.compareTo("=?") == 0) toSet = "=";
+                if (toSet.length() < MaximumDigitsAnswer)
+                    test.setText(toSet + "8");
+            }
+        });
+
+        button9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final TextView test = (TextView) rootView.findViewById(R.id.answer);
+                String toSet = (String) test.getText();
+                if (toSet.compareTo("=?") == 0) toSet = "=";
+                if (toSet.length() < MaximumDigitsAnswer)
+                    test.setText(toSet + "9");
+            }
+        });
+
+        button0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final TextView test = (TextView) rootView.findViewById(R.id.answer);
+                String toSet = (String) test.getText();
+                if (toSet.compareTo("=?") == 0) toSet = "=";
+                if (toSet.length() < MaximumDigitsAnswer)
+                    test.setText(toSet + "0");
+            }
+        });
+
+        buttonDel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final TextView test = (TextView) rootView.findViewById(R.id.answer);
+                String toSet = (String) test.getText();
+                if (toSet.compareTo("=?") == 0) toSet = "=";
+                else if (!(toSet.compareTo("=") == 0)) {
+                    toSet = toSet.substring(0,toSet.length()-1);
+                }
+                test.setText(toSet);
+            }
+        });
+
+        buttonMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final TextView test = (TextView) rootView.findViewById(R.id.answer);
+                String toSet = (String) test.getText();
+                if (toSet.compareTo("=?") == 0 || toSet.compareTo("=") == 0) toSet = "=-";
+                test.setText(toSet);
+            }
+        });
+
+        buttonHash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final TextView test = (TextView) rootView.findViewById(R.id.answer);
+                String toSet = (String) test.getText();
+                System.out.println("Go next with: " + toSet);
             }
         });
 
