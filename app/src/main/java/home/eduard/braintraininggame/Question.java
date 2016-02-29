@@ -10,10 +10,12 @@ public class Question {
     private final int maximumNumber = 10;
     private String challenge;
     private int operations;
+    private int answer;
 
     public Question(int level) {
         this.level = level;
         challenge = "Guess:";
+        answer = 999999;
     }
 
     public void start() {
@@ -67,8 +69,9 @@ public class Question {
         number = Math.floor(Math.random() * maximumNumber);
         randomNumber = (int) number;
 
-        //adding the first random number to the challenge string
+        //adding the first random number to the challenge string and answer
         setChallenge(randomNumber);
+        answer = randomNumber;
 
         while (i < numbers) {
 
@@ -92,6 +95,10 @@ public class Question {
 
             //adding the random number to the challenge string
             setChallenge(randomNumber);
+
+            //add the operation and number to the final good answer
+            doAnswer(oper[sign], randomNumber);
+
             i++;
         }
 
@@ -117,6 +124,28 @@ public class Question {
     }
 
     public int getOperations() {
-        return 2*operations-1;
+        return 2 * operations - 1;
+    }
+
+    public void doAnswer(String operation, int number) {
+        switch (operation) {
+            case "*":
+                answer *= number;
+                break;
+            case "/":
+                double toSet = (double) answer / number;
+                answer = (int) Math.round(toSet);
+                break;
+            case "-":
+                answer -= number;
+                break;
+            default:
+                answer += number;
+                break;
+        }
+    }
+
+    public int getAnswer() {
+        return answer;
     }
 }

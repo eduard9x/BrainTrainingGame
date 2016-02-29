@@ -203,20 +203,22 @@ public class GameFragment extends Fragment {
 //        todo need to check how to add the 4 hints stuff
         //todo need to remove the visible/invisible condition. not enough.
 
-        System.out.println("here ");
-
         TextView correct = (TextView) rootView.findViewById(R.id.correct);
         int correctVisible = correct.getVisibility();
         TextView wrong = (TextView) rootView.findViewById(R.id.wrong);
         int wrongVisible = wrong.getVisibility();
 
-        if (correctVisible == 4 && wrongVisible == 4) {//both invisible - first time pressed
+        if (correctVisible == 4 && wrongVisible == 4) {//both invisible - first time pressed and timer expired
             compareAnswer(rootView);
             correctVisible = correct.getVisibility();
-            if (correctVisible == 0)
+            if (correctVisible == 0) {
                 myTimer.cancel();
+            }
             //todo need to make it cancel only when the answer is correct -- needs testing properly
         } else {
+
+            System.out.println("invisible");
+
             correct.setVisibility(View.INVISIBLE);
             wrong.setVisibility(View.INVISIBLE);
 
@@ -266,6 +268,7 @@ public class GameFragment extends Fragment {
 
         Answer goodAnswerRough = new Answer(question, limit);
         int goodAnswer = goodAnswerRough.solve();
+
         System.out.println("Good answer: " + goodAnswer);
 
         try {

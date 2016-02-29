@@ -28,6 +28,8 @@ public class GameActivity extends Activity {
         txt = (TextView) root.findViewById(R.id.operations);
         txt.setText(Integer.toString(firstQuestion.getOperations()));
         //this will save the number of operations in an invisible text field
+
+        System.out.println(firstQuestion.getAnswer());
     }
 
 }
