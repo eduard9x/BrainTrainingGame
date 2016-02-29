@@ -1,15 +1,12 @@
 package home.eduard.braintraininggame;
 
-import android.view.View;
-import android.widget.TextView;
-
 public class Question {
 
     private int level;
     private final String[] oper = {"*", "/", "+", "-"};
     private final int maximumNumber = 10;
     private String challenge;
-    private int operations;
+    private int howManyNumbers;
     private int answer;
 
     public Question(int level) {
@@ -37,27 +34,27 @@ public class Question {
     }
 
     public void novice() {
-        operations = 2;
-        createChallenge(operations);
+        howManyNumbers = 2;
+        createChallenge(howManyNumbers);
     }
 
 
     public void easy() {
         double number = Math.floor(Math.random() * 2 + 2);
-        operations = (int) number;
-        createChallenge(operations);
+        howManyNumbers = (int) number;
+        createChallenge(howManyNumbers);
     }
 
     public void medium() {
         double number = Math.floor(Math.random() * 3 + 2);
-        operations = (int) number;
-        createChallenge(operations);
+        howManyNumbers = (int) number;
+        createChallenge(howManyNumbers);
     }
 
     public void guru() {
         double number = Math.floor(Math.random() * 5 + 2);
-        operations = (int) number;
-        createChallenge(operations);
+        howManyNumbers = (int) number;
+        createChallenge(howManyNumbers);
     }
 
     public void createChallenge(int numbers) {
@@ -121,10 +118,6 @@ public class Question {
         double number = Math.floor(Math.random() * maximumNumber);
         int randomNumber = (int) number;
         return randomNumber;
-    }
-
-    public int getOperations() {
-        return 2 * operations - 1;
     }
 
     public void doAnswer(String operation, int number) {

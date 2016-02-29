@@ -2,7 +2,6 @@ package home.eduard.braintraininggame;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.TextView;
 
@@ -23,13 +22,11 @@ public class GameActivity extends Activity {
 
         TextView txt = (TextView) root.findViewById(R.id.guess);
         txt.setText(firstQuestion.getChallenge());
-        //this will set the question to the TextView
+        //this will set the question to the Guess: TextView
 
-        txt = (TextView) root.findViewById(R.id.operations);
-        txt.setText(Integer.toString(firstQuestion.getOperations()));
-        //this will save the number of operations in an invisible text field
-
-        System.out.println(firstQuestion.getAnswer());
+        txt = (TextView) root.findViewById(R.id.good_answer);
+        txt.setText(Integer.toString(firstQuestion.getAnswer()));
+        //this will save the good answer in an invisible text field
     }
 
 }

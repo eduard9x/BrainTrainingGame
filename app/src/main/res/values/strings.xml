@@ -44,5 +44,5 @@
     <string name="wrong">Wrong!</string>
     <string name="hint_less">Hint: Less</string>
     <string name="hint_greater">Hint: Greater</string>
-    <string name="operations">0</string>
+    <string name="good_answer">0</string>
 </resources>
