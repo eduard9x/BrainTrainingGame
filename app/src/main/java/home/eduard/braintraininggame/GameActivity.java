@@ -27,6 +27,10 @@ public class GameActivity extends Activity {
         txt = (TextView) root.findViewById(R.id.good_answer);
         txt.setText(Integer.toString(firstQuestion.getAnswer()));
         //this will save the good answer in an invisible text field
+
+        txt = (TextView) root.findViewById(R.id.level_chosen);
+        txt.setText(Integer.toString(level));
+        //this will save the level chosen in an invisible text field
     }
 
 }

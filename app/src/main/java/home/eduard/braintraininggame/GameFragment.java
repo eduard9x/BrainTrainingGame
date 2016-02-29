@@ -7,17 +7,18 @@ import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class GameFragment extends Fragment {
 
     private AlertDialog mDialog;
     private final int MaximumDigitsAnswer = 6;
-    private int numberOfQuestions = 0;
+    private int numberOfQuestions = 1;
     private CountDownTimer myTimer;
+    private int numberOfTimes = 0;
+    private View buttonHash;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,8 +38,9 @@ public class GameFragment extends Fragment {
         final View button9 = rootView.findViewById(R.id.button9);
         final View button0 = rootView.findViewById(R.id.button0);
         final View buttonDel = rootView.findViewById(R.id.buttonDel);
-        final View buttonHash = rootView.findViewById(R.id.buttonHash);
+        buttonHash = rootView.findViewById(R.id.buttonHash);
         final View buttonMinus = rootView.findViewById(R.id.buttonMinus);
+        final Switch switchHints = (Switch) rootView.findViewById(R.id.hints);
         //endregion
 
         //region Button1
@@ -186,11 +188,18 @@ public class GameFragment extends Fragment {
             }
         });
         //endregion
-        //region ButtonHash
-        buttonHash.setOnClickListener(new View.OnClickListener() {
+        //region ButtonHash1
+        setButtonHash1(rootView);
+        //endregion
+        //region SwitchHints
+        switchHints.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View view) {
-                goNextQuestion(rootView);
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    setButtonHash3(rootView);
+                } else {
+                    setButtonHash1(rootView);
+                }
             }
         });
         //endregion
@@ -202,42 +211,33 @@ public class GameFragment extends Fragment {
 
     public void goNextQuestion(View rootView) {
 
-//        todo need to check how to add the 4 hints stuff
-        //todo need to remove the visible/invisible condition. not enough.
+        makeAllInvisible(rootView);
 
-        TextView correct = (TextView) rootView.findViewById(R.id.correct);
-        int correctVisible = correct.getVisibility();
-        TextView wrong = (TextView) rootView.findViewById(R.id.wrong);
-        int wrongVisible = wrong.getVisibility();
+        TextView txt = (TextView) rootView.findViewById(R.id.level_chosen);
+        int level = Integer.parseInt((String) txt.getText());
+        Question nextQuestion = new Question(level);
+        nextQuestion.start();
 
-        if (correctVisible == 4 && wrongVisible == 4) {//both invisible - first time pressed and timer expired
-            compareAnswer(rootView);
-            correctVisible = correct.getVisibility();
-            if (correctVisible == 0) {
-                myTimer.cancel();
-            }
-            //todo need to make it cancel only when the answer is correct -- needs testing properly
-        } else {
+        txt = (TextView) rootView.findViewById(R.id.guess);
+        txt.setText(nextQuestion.getChallenge());
+        //this will set the question to the Guess TextView
 
-            System.out.println("invisible");
+        txt = (TextView) rootView.findViewById(R.id.user_answer);
+        txt.setText("=?");
+        //reset the user's answer field to default '?'
 
-            correct.setVisibility(View.INVISIBLE);
-            wrong.setVisibility(View.INVISIBLE);
+        //reset the limit number of times
+        numberOfTimes = 0;
 
-            numberOfQuestions++;
-            Question nextQuestion = new Question(3);
-            nextQuestion.start();
+        txt = (TextView) rootView.findViewById(R.id.good_answer);
+        txt.setText(Integer.toString(nextQuestion.getAnswer()));
+        //this will save the good answer in an invisible text field
 
-            TextView txt = (TextView) rootView.findViewById(R.id.guess);
-            txt.setText(nextQuestion.getChallenge());
-            //this will set the question to the TextView
+        doTimer(rootView);
+        //start a new timer for a new question
 
-            txt = (TextView) rootView.findViewById(R.id.good_answer);
-            txt.setText(Integer.toString(nextQuestion.getAnswer()));
-            //this will save the number of operations in an invisible text field
-        }
-
-
+        numberOfQuestions++;
+        //add one more to the counter
     }
 
     @Override
@@ -249,85 +249,43 @@ public class GameFragment extends Fragment {
             mDialog.dismiss();
     }
 
-    public void compareAnswer(View rootView) {
+    public int compareAnswer(View rootView) {
 
         int userAnswer;
 
-        final TextView ans = (TextView) rootView.findViewById(R.id.user_answer);
-        final TextView goodAns = (TextView) rootView.findViewById(R.id.good_answer);
+        TextView ans = (TextView) rootView.findViewById(R.id.user_answer);
+        TextView goodAns = (TextView) rootView.findViewById(R.id.good_answer);
 
         String userAnswerRough = (String) ans.getText();
-
         userAnswerRough = userAnswerRough.substring(1, userAnswerRough.length());
         //1 because I want to skip the '=' sign
 
         int goodAnswer = Integer.parseInt((String) goodAns.getText());
+//        System.out.println("Good answer: " + goodAnswer);
 
-        System.out.println("Good answer: " + goodAnswer);
+        userAnswer = Integer.parseInt(userAnswerRough);
 
-        try {
-            userAnswer = Integer.parseInt(userAnswerRough);
-        } catch (Exception e) {
-            userAnswer = -999999;
-        }
-        //todo try and crash this -- see if it really works all the time
-
-        int timeRemaining = 7;
-        //todo need to make connection with timer
-
-//        doScore(userAnswer, goodAnswer, timeRemaining, rootView);
-
+        return userAnswer - goodAnswer;
     }
-
-//    public void doScore(int userAnswer, int goodAnswer, int timeRemaining, View rootView) {
-//
-//        if (goodAnswer == userAnswer) {
-//            TextView ScoreView = (TextView) rootView.findViewById(R.id.score);
-//            String scoreRough = (String) ScoreView.getText();
-//            //this will have a string as-> Score:242
-//            int colon = scoreRough.indexOf(":");
-//            int score = Integer.parseInt(scoreRough.substring(colon + 1, scoreRough.length()));
-//            //get the number after the colon ':'
-//
-//            int toAdd = (int) Math.round((double) 100 / (10 - timeRemaining));
-//            //rounding the number in order to get 100/(10-4) = 100/6 = 17 points
-//
-//            score += toAdd;
-//            ScoreView.setText("Score:" + Integer.toString(score));
-//            TextView correct = (TextView) rootView.findViewById(R.id.correct);
-//            correct.setVisibility(View.VISIBLE);
-//            TextView wrong = (TextView) rootView.findViewById(R.id.wrong);
-//            wrong.setVisibility(View.INVISIBLE);
-//
-//            TextView less = (TextView) rootView.findViewById(R.id.hint_less);
-//            less.setVisibility(View.INVISIBLE);
-//            TextView greater = (TextView) rootView.findViewById(R.id.hint_greater);
-//            greater.setVisibility(View.INVISIBLE);
-//        } else {
-//            Switch Hints = (Switch) rootView.findViewById(R.id.Hints);
-//            if (Hints.isChecked())
-//                if (goodAnswer < userAnswer) {
-//                    TextView less = (TextView) rootView.findViewById(R.id.hint_less);
-//                    less.setVisibility(View.VISIBLE);
-//                    TextView greater = (TextView) rootView.findViewById(R.id.hint_greater);
-//                    greater.setVisibility(View.INVISIBLE);
-//                } else {
-//                    TextView less = (TextView) rootView.findViewById(R.id.hint_less);
-//                    less.setVisibility(View.INVISIBLE);
-//                    TextView greater = (TextView) rootView.findViewById(R.id.hint_greater);
-//                    greater.setVisibility(View.VISIBLE);
-//                }
-//            TextView wrong = (TextView) rootView.findViewById(R.id.wrong);
-//            wrong.setVisibility(View.VISIBLE);
-//            TextView correct = (TextView) rootView.findViewById(R.id.correct);
-//            correct.setVisibility(View.INVISIBLE);
-//        }
-//    }
 
     public void doScore(View rootView) {
+        TextView score = (TextView) rootView.findViewById(R.id.score);
+        TextView time = (TextView) rootView.findViewById(R.id.time);
 
+        String scoreRough = (String) score.getText();
+        //this will have a string as-> Score:242
+        int colon = scoreRough.indexOf(":");
+        int previousScore = Integer.parseInt(scoreRough.substring(colon + 1, scoreRough.length()));
+        //get the number after the colon ':'
+
+        String timer = (String) time.getText();
+        int timeRemaining = Integer.parseInt(timer.substring(0, timer.indexOf(" ")));
+
+        int toAdd = (int) Math.round((double) 100 / (10 - timeRemaining));
+
+        int finalScore = previousScore + toAdd;
+        score.setText("Score:" + Integer.toString(finalScore));
     }
-
 
     public void doTimer(final View rootView) {
         myTimer = new CountDownTimer(10000, 1000) {
@@ -338,7 +296,6 @@ public class GameFragment extends Fragment {
             }
 
             public void onFinish() {
-                makeAllInvisible(rootView);
                 goNextQuestion(rootView);
             }
         }.start();
@@ -409,7 +366,120 @@ public class GameFragment extends Fragment {
         myTextView.setVisibility(View.VISIBLE);
     }
 
+    public void setButtonHash1(final View rootView) {
+        buttonHash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (isProperAnswer(rootView)) {
+                    int result = compareAnswer(rootView);
+                    //compare the answer with the correct one
+                    myTimer.cancel();
+                    //stop the timer no matter what
+                    doResults(result, rootView);
+                    //check if the result is good and display the proper message
+                    setButtonHash2(rootView);
+                    //change the event to the next one -- expecting to get a new question
+                }
+            }
+        });
+    }
 
+    public void setButtonHash2(final View rootView) {
+        buttonHash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //need to start a new question
+                goNextQuestion(rootView);
+                //change the event to the first one
+                setButtonHash1(rootView);
+            }
+        });
+    }
 
+    public void setButtonHash3(final View rootView) {
+        buttonHash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (isProperAnswer(rootView)) {
+                    int result = compareAnswer(rootView);
+                    //compare the answer with the correct one
+
+                    if (numberOfTimes < 3) {
+                        doResultsWithHints(result, rootView);
+                        //check if the result is good and display the proper message
+                    } else {
+                        myTimer.cancel();
+                        //stop the timer
+                        goNextQuestion(rootView);
+                        //start a new question
+                    }
+                }
+            }
+        });
+    }
+
+    public void setButtonHash4(final View rootView) {
+        buttonHash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //need to start a new question
+                goNextQuestion(rootView);
+                //change the event to the one that allows hints
+                setButtonHash3(rootView);
+            }
+        });
+    }
+
+    public boolean isProperAnswer(View rootView) {
+
+        TextView userAnswer = (TextView) rootView.findViewById(R.id.user_answer);
+        String answer = (String) userAnswer.getText();
+
+        switch (answer) {
+            case "=?":
+                return false;
+            case "=-":
+                return false;
+            case "=":
+                return false;
+            default:
+                return true;
+        }
+    }
+
+    public void doResults(int result, View rootView) {
+        if (result == 0) {
+            //the answer is correct
+            makeCorrectVisible(rootView);
+            //add points to the score
+            doScore(rootView);
+        } else
+            //the answer is wrong
+            makeWrongVisible(rootView);
+    }
+
+    public void doResultsWithHints(int result, View rootView) {
+        if (result == 0) {
+            myTimer.cancel();
+            //the answer is correct
+            makeCorrectVisible(rootView);
+            //add points to the score
+            doScore(rootView);
+            //set the event listener to the one that gives a nest question and hints
+            setButtonHash4(rootView);
+        } else if (result > 0) {
+            //the answer is wrong less
+            makeWrongLess(rootView);
+            //add one turn to the counter
+            numberOfTimes++;
+        } else {
+            //the answer is wrong greater
+            makeWrongGreater(rootView);
+            //add one turn to the counter
+            numberOfTimes++;
+        }
+    }
 
 }
+
+//todo need to remove the bug: if you have a correct answer, timer stops, click hints:on, click #, get credited again for results
