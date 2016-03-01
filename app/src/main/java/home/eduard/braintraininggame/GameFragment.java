@@ -2,6 +2,7 @@ package home.eduard.braintraininggame;
 
 import android.app.AlertDialog;
 import android.app.Fragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ public class GameFragment extends Fragment {
     private int numberOfQuestions = 1;
     private CountDownTimer myTimer;
     private int numberOfTimes = 0;
+    private final int questionsAvailable = 10;
     private View buttonHash;
 
     @Override
@@ -26,7 +28,7 @@ public class GameFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.fragment_game, container, false);
         // Handle buttons here...
 
-        //region Keypad Declarations
+        //region Declarations
         final View button1 = rootView.findViewById(R.id.button1);
         final View button2 = rootView.findViewById(R.id.button2);
         final View button3 = rootView.findViewById(R.id.button3);
@@ -196,9 +198,13 @@ public class GameFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    setButtonHash3(rootView);
+                    if (anyVisible(rootView)) setButtonHash4(rootView);
+                    else
+                        setButtonHash3(rootView);
                 } else {
-                    setButtonHash1(rootView);
+                    if (anyVisible(rootView)) setButtonHash2(rootView);
+                    else
+                        setButtonHash1(rootView);
                 }
             }
         });
@@ -238,6 +244,9 @@ public class GameFragment extends Fragment {
 
         numberOfQuestions++;
         //add one more to the counter
+
+        if(numberOfQuestions==questionsAvailable) doEnding(rootView);
+
     }
 
     @Override
@@ -388,10 +397,12 @@ public class GameFragment extends Fragment {
         buttonHash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //need to start a new question
-                goNextQuestion(rootView);
-                //change the event to the first one
-                setButtonHash1(rootView);
+                if (isProperAnswer(rootView)) {
+                    //need to start a new question
+                    goNextQuestion(rootView);
+                    //change the event to the first one
+                    setButtonHash1(rootView);
+                }
             }
         });
     }
@@ -401,6 +412,7 @@ public class GameFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (isProperAnswer(rootView)) {
+
                     int result = compareAnswer(rootView);
                     //compare the answer with the correct one
 
@@ -414,6 +426,7 @@ public class GameFragment extends Fragment {
                         //start a new question
                     }
                 }
+
             }
         });
     }
@@ -422,10 +435,12 @@ public class GameFragment extends Fragment {
         buttonHash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //need to start a new question
-                goNextQuestion(rootView);
-                //change the event to the one that allows hints
-                setButtonHash3(rootView);
+                if (isProperAnswer(rootView)) {
+                    //need to start a new question
+                    goNextQuestion(rootView);
+                    //change the event to the one that allows hints
+                    setButtonHash3(rootView);
+                }
             }
         });
     }
@@ -480,6 +495,44 @@ public class GameFragment extends Fragment {
         }
     }
 
-}
+    public boolean anyVisible(View rootView) {
+        boolean anyVisible = false;
+        TextView myTextView;
 
-//todo need to remove the bug: if you have a correct answer, timer stops, click hints:on, click #, get credited again for results
+        myTextView = (TextView) rootView.findViewById(R.id.correct);
+        if (myTextView.getVisibility() == View.VISIBLE) anyVisible = true;
+        myTextView = (TextView) rootView.findViewById(R.id.wrong);
+        if (myTextView.getVisibility() == View.VISIBLE) anyVisible = true;
+        myTextView = (TextView) rootView.findViewById(R.id.hint_less);
+        if (myTextView.getVisibility() == View.VISIBLE) anyVisible = true;
+        myTextView = (TextView) rootView.findViewById(R.id.hint_greater);
+        if (myTextView.getVisibility() == View.VISIBLE) anyVisible = true;
+
+        return anyVisible;
+    }
+
+    public void doEnding(final View rootView){
+
+        myTimer.cancel();
+
+        AlertDialog.Builder builder =
+                new AlertDialog.Builder(getActivity());
+        builder.setTitle(R.string.ending_label);
+
+        TextView score = (TextView) rootView.findViewById(R.id.score);
+        String message = "Good job.\nYou managed to get this " + (String) score.getText() ;
+        builder.setMessage(message);
+        builder.setPositiveButton(R.string.ok_label,
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface,
+                                        int i) {
+                        getActivity().finish();
+                    }
+                });
+        builder.setCancelable(false);
+        mDialog = builder.show();
+
+    }
+
+}

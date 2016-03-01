@@ -38,7 +38,6 @@ public class Question {
         createChallenge(howManyNumbers);
     }
 
-
     public void easy() {
         double number = Math.floor(Math.random() * 2 + 2);
         howManyNumbers = (int) number;
@@ -95,7 +94,6 @@ public class Question {
 
             //add the operation and number to the final good answer
             doAnswer(oper[sign], randomNumber);
-
             i++;
         }
 

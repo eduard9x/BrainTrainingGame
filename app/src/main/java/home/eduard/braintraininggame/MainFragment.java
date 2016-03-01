@@ -92,7 +92,6 @@ public class MainFragment extends Fragment {
         intent_difficulty.putExtra("DIFFICULTY",Integer.toString(difficulty));
         getActivity().startActivity(intent_difficulty);
 
-//        System.out.println(difficulty);
     }
 
     @Override

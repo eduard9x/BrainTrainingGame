@@ -46,4 +46,6 @@
     <string name="hint_greater">Hint: Greater</string>
     <string name="good_answer">0</string>
     <string name="level_chosen">0</string>
+    <string name="ending_label">Congratulations</string>
+    <string name="ending_text">Good Job. This is your </string>
 </resources>
