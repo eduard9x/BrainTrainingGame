@@ -26,6 +26,7 @@ public class GameFragment extends Fragment {
     private View rootView;
     private int hashEvent = 0;
     private boolean continueGame = false;
+    private int milisecondsTimer = 10000;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -248,7 +249,7 @@ public class GameFragment extends Fragment {
         txt.setText(Integer.toString(nextQuestion.getAnswer()));
         //this will save the good answer in an invisible text field
 
-        doTimer();
+        doTimer(milisecondsTimer);
         //start a new timer for a new question
 
         numberOfQuestions++;
@@ -303,8 +304,8 @@ public class GameFragment extends Fragment {
         score.setText("Score:" + Integer.toString(finalScore));
     }
 
-    public void doTimer() {
-        myTimer = new CountDownTimer(10000, 1000) {
+    public void doTimer(int miliseconds) {
+        myTimer = new CountDownTimer(miliseconds, 1000) {
             final TextView timer = (TextView) rootView.findViewById(R.id.time);
 
             public void onTick(long millisUntilFinished) {
@@ -658,6 +659,11 @@ public class GameFragment extends Fragment {
         builder.append(myString);
         builder.append(',');
 
+        myString = Integer.toString(numberOfQuestions);
+
+        builder.append(myString);
+        builder.append(',');
+
 
         return builder.toString();
     }
@@ -693,6 +699,8 @@ public class GameFragment extends Fragment {
         index++;
         String switchChange = fields[index];
         index++;
+        String numberOfQuestionsReached = fields[index];
+        index++;
 
         restoreQuestion(question);
         restoreLevel(level);
@@ -705,8 +713,14 @@ public class GameFragment extends Fragment {
         restoreGreater(greaterVisibility);
         restoreLess(lessVisibility);
         restoreSwitch(switchChange);
+        restoreNumberOfQuestions(numberOfQuestionsReached);
         restoreTime(time);
 
+    }
+
+    public void restoreNumberOfQuestions(String numberOfQuestionsReached){
+        int number = Integer.parseInt(numberOfQuestionsReached);
+        numberOfQuestions = number;
     }
 
     public void restoreSwitch(String switchChange){
