@@ -94,6 +94,7 @@ public class Question {
 
             //add the operation and number to the final good answer
             doAnswer(oper[sign], randomNumber);
+
             i++;
         }
 

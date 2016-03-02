@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clipChildren="false"
-    android:background="#123456"
+    android:background="#81b3e4"
     tools:context=".GameActivity">
 
         <fragment
-            android:id="@+id/fragment_display"
+            android:id="@+id/fragment_game"
             class="home.eduard.braintraininggame.GameFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

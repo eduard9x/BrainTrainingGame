@@ -48,4 +48,7 @@
     <string name="level_chosen">0</string>
     <string name="ending_label">Congratulations</string>
     <string name="ending_text">Good Job. This is your </string>
+    <string name="save_label">Save before exit?</string>
+    <string name="save_message">Do you want to save your game before exiting?</string>
+    <string name="save_btn">Save and Exit</string>
 </resources>
