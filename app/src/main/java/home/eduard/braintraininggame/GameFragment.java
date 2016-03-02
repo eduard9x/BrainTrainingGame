@@ -60,9 +60,9 @@ public class GameFragment extends Fragment {
 
         TextView questionLabel = (TextView) rootView.findViewById(R.id.guess);
         questionLabel.setVisibility(View.INVISIBLE);
+
         TextView answerLabel = (TextView) rootView.findViewById(R.id.user_answer);
         answerLabel.setVisibility(View.INVISIBLE);
-
 
         //region Button1
         button1.setOnClickListener(new View.OnClickListener() {
@@ -232,6 +232,7 @@ public class GameFragment extends Fragment {
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Button startBtn = (Button) rootView.findViewById(R.id.start_button);
                 startBtn.setVisibility(View.INVISIBLE);
 
@@ -241,16 +242,28 @@ public class GameFragment extends Fragment {
                 TextView answerLabel = (TextView) rootView.findViewById(R.id.user_answer);
                 answerLabel.setVisibility(View.VISIBLE);
 
-
                 TextView timeLabel = (TextView) rootView.findViewById(R.id.time);
                 String timeOnScreen = (String) timeLabel.getText();
                 int time = Integer.parseInt(timeOnScreen.substring(0, timeOnScreen.indexOf(" ")));
 
-                if (time == secondsTimer)
-                    doTimer(secondsTimer);
-                else doTimer(time);
-
                 Log.d("Time", "time = " + time);
+                Log.d("Fragment", "Continue = " + isContinueGame());
+
+                CountDownTimer timer = getMyTimer();
+                if (timer != null) timer.cancel();
+
+
+                if (isContinueGame()) {
+                    if (!anyVisible()) {
+                        doTimer(time);
+                    }
+                } else {
+                    doTimer(time);
+                }
+
+                /* todo in here, the continue is true, so I can add a switch or something to make sure
+                ** I have some kind of behaviour on continue and a different one in the new game.
+                */
 
             }
         });
@@ -259,6 +272,17 @@ public class GameFragment extends Fragment {
 //        doTimer();
 
         return rootView;
+    }
+
+    public void continueWithLabels() {
+        Button startBtn = (Button) rootView.findViewById(R.id.start_button);
+        startBtn.setVisibility(View.INVISIBLE);
+
+        TextView questionLabel = (TextView) rootView.findViewById(R.id.guess);
+        questionLabel.setVisibility(View.VISIBLE);
+
+        TextView answerLabel = (TextView) rootView.findViewById(R.id.user_answer);
+        answerLabel.setVisibility(View.VISIBLE);
     }
 
     public void goNextQuestion() {
@@ -340,7 +364,7 @@ public class GameFragment extends Fragment {
     }
 
     public void doTimer(int miliseconds) {
-        myTimer = new CountDownTimer(miliseconds*1000, 1000) {
+        myTimer = new CountDownTimer(miliseconds * 1000, 1000) {
             final TextView timer = (TextView) rootView.findViewById(R.id.time);
 
             public void onTick(long millisUntilFinished) {
@@ -419,10 +443,11 @@ public class GameFragment extends Fragment {
     }
 
     public void setButtonHash1() {
+        hashEvent = 1;
+
         buttonHash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                hashEvent = 1;
                 System.out.println("hash event:" + hashEvent);
                 if (isProperAnswer()) {
                     //compare the answer with the correct one
@@ -438,6 +463,7 @@ public class GameFragment extends Fragment {
                             doEnding();
                             break;
                         default:
+                            hashEvent = 2;
                             setButtonHash2();
                             //change the event to the next one -- expecting to get a new question
                             break;
@@ -448,10 +474,11 @@ public class GameFragment extends Fragment {
     }
 
     public void setButtonHash2() {
+        hashEvent = 2;
+
         buttonHash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                hashEvent = 2;
                 System.out.println("hash event:" + hashEvent);
                 if (isProperAnswer()) {
                     //need to start a new question
@@ -464,10 +491,11 @@ public class GameFragment extends Fragment {
     }
 
     public void setButtonHash3() {
+        hashEvent = 3;
+
         buttonHash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                hashEvent = 3;
                 System.out.println("hash event:" + hashEvent);
                 if (isProperAnswer()) {
 
@@ -499,10 +527,11 @@ public class GameFragment extends Fragment {
 
     //when you answer correctly with hints on, this will be executed for next question
     public void setButtonHash4() {
+        hashEvent = 4;
+
         buttonHash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                hashEvent = 4;
                 System.out.println("hash event:" + hashEvent);
                 if (isProperAnswer()) {
                     //need to start a new question
@@ -771,6 +800,7 @@ public class GameFragment extends Fragment {
         switch (less) {
             case View.VISIBLE:
                 lessView.setVisibility(View.VISIBLE);
+                continueWithLabels();
                 break;
             default:
                 lessView.setVisibility(View.INVISIBLE);
@@ -786,6 +816,7 @@ public class GameFragment extends Fragment {
         switch (greater) {
             case View.VISIBLE:
                 greaterView.setVisibility(View.VISIBLE);
+                continueWithLabels();
                 break;
             default:
                 greaterView.setVisibility(View.INVISIBLE);
@@ -801,6 +832,7 @@ public class GameFragment extends Fragment {
         switch (wrong) {
             case View.VISIBLE:
                 wrongView.setVisibility(View.VISIBLE);
+                continueWithLabels();
                 break;
             default:
                 wrongView.setVisibility(View.INVISIBLE);
@@ -816,6 +848,7 @@ public class GameFragment extends Fragment {
         switch (correct) {
             case View.VISIBLE:
                 correctView.setVisibility(View.VISIBLE);
+                continueWithLabels();
                 break;
             default:
                 correctView.setVisibility(View.INVISIBLE);

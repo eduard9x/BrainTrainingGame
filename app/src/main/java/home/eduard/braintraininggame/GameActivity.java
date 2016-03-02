@@ -79,7 +79,6 @@ public class GameActivity extends Activity {
         getPreferences(MODE_PRIVATE).edit()
                 .putString(PREF_RESTORE, gameData)
                 .commit();
-        Log.d("BTG", "state = " + gameData);
     }
 
     @Override
