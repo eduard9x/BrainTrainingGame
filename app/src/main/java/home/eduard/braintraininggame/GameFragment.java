@@ -33,9 +33,6 @@ public class GameFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        Log.d("Fragment", "Continue = " + isContinueGame());
-
-
         rootView = inflater.inflate(R.layout.fragment_game, container, false);
         // Retain this fragment across configuration changes.
         setRetainInstance(true);
@@ -779,7 +776,6 @@ public class GameFragment extends Fragment {
         restoreSwitch(switchChange);
         restoreNumberOfQuestions(numberOfQuestionsReached);
         restoreTime(time);
-
     }
 
     public void restoreNumberOfQuestions(String numberOfQuestionsReached) {

@@ -71,6 +71,8 @@ public class GameActivity extends Activity {
     protected void onPause() {
         super.onPause();
 
+        Log.d("BTG", "pause activity");
+
         CountDownTimer timer = mGameFragment.getMyTimer();
         if(timer!=null) timer.cancel();
 
@@ -85,4 +87,6 @@ public class GameActivity extends Activity {
     protected void onResume() {
         super.onResume();
     }
+
+
 }

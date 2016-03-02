@@ -4,7 +4,10 @@ import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +17,7 @@ import android.widget.TextView;
 public class MainFragment extends Fragment {
 
     private AlertDialog mDialog;
+    private boolean saveGame;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,7 +34,7 @@ public class MainFragment extends Fragment {
         getActivity().startActivity(intent_difficulty);
     }
 
-    public void initViews(View rootView){
+    public void initViews(final View rootView){
         //region Declarations
         View newGameButton = rootView.findViewById(R.id.new_button);
         View continueButton = rootView.findViewById(R.id.continue_button);
@@ -115,7 +119,13 @@ public class MainFragment extends Fragment {
                             @Override
                             public void onClick(DialogInterface dialogInterface,
                                                 int i) {
-                                System.out.println("Saving the stage of this game.");
+                                Log.d("Save stage", "Saving the stage of this game.");
+
+                                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+                                SharedPreferences.Editor editor = preferences.edit();
+                                editor.putString("Save Game","True");
+                                editor.apply();
+
                                 getActivity().finish();
                                 System.exit(0);
                             }
@@ -125,6 +135,12 @@ public class MainFragment extends Fragment {
                             @Override
                             public void onClick(DialogInterface dialogInterface,
                                                 int i) {
+
+                                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+                                SharedPreferences.Editor editor = preferences.edit();
+                                editor.putString("Save Game","False");
+                                editor.apply();
+
                                 getActivity().finish();
                                 System.exit(0);
                             }
@@ -134,6 +150,16 @@ public class MainFragment extends Fragment {
             }
         });
         //endregion
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        String name = preferences.getString("Save Game", "");
+        if(!name.equalsIgnoreCase(""))
+        {
+            System.out.println(name);
+           if(name.equals("True")) continueButton.setEnabled(true);
+            else continueButton.setEnabled(false);
+        }
+
     }
 
     @Override
@@ -148,7 +174,9 @@ public class MainFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
 
-
+    public boolean isSaveGame() {
+        return saveGame;
     }
 }

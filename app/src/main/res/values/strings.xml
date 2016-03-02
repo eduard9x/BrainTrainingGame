@@ -52,4 +52,5 @@
     <string name="save_message">Do you want to save your game before exiting?</string>
     <string name="save_btn">Save and Exit</string>
     <string name="start_button">Start!</string>
+    <string name="save_game">true</string>
 </resources>
