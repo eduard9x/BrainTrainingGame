@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -26,7 +27,7 @@ public class GameFragment extends Fragment {
     private View rootView;
     private int hashEvent = 0;
     private boolean continueGame = false;
-    private int milisecondsTimer = 10000;
+    private int secondsTimer = 10;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,10 +52,17 @@ public class GameFragment extends Fragment {
         final View button9 = rootView.findViewById(R.id.button9);
         final View button0 = rootView.findViewById(R.id.button0);
         final View buttonDel = rootView.findViewById(R.id.buttonDel);
+        final View buttonStart = rootView.findViewById(R.id.start_button);
         buttonHash = rootView.findViewById(R.id.buttonHash);
         final View buttonMinus = rootView.findViewById(R.id.buttonMinus);
         final Switch switchHints = (Switch) rootView.findViewById(R.id.hints);
         //endregion
+
+        TextView questionLabel = (TextView) rootView.findViewById(R.id.guess);
+        questionLabel.setVisibility(View.INVISIBLE);
+        TextView answerLabel = (TextView) rootView.findViewById(R.id.user_answer);
+        answerLabel.setVisibility(View.INVISIBLE);
+
 
         //region Button1
         button1.setOnClickListener(new View.OnClickListener() {
@@ -220,6 +228,33 @@ public class GameFragment extends Fragment {
             }
         });
         //endregion
+        //region Button Start
+        buttonStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Button startBtn = (Button) rootView.findViewById(R.id.start_button);
+                startBtn.setVisibility(View.INVISIBLE);
+
+                TextView questionLabel = (TextView) rootView.findViewById(R.id.guess);
+                questionLabel.setVisibility(View.VISIBLE);
+
+                TextView answerLabel = (TextView) rootView.findViewById(R.id.user_answer);
+                answerLabel.setVisibility(View.VISIBLE);
+
+
+                TextView timeLabel = (TextView) rootView.findViewById(R.id.time);
+                String timeOnScreen = (String) timeLabel.getText();
+                int time = Integer.parseInt(timeOnScreen.substring(0, timeOnScreen.indexOf(" ")));
+
+                if (time == secondsTimer)
+                    doTimer(secondsTimer);
+                else doTimer(time);
+
+                Log.d("Time", "time = " + time);
+
+            }
+        });
+        //endregion
 
 //        doTimer();
 
@@ -249,7 +284,7 @@ public class GameFragment extends Fragment {
         txt.setText(Integer.toString(nextQuestion.getAnswer()));
         //this will save the good answer in an invisible text field
 
-        doTimer(milisecondsTimer);
+        doTimer(secondsTimer);
         //start a new timer for a new question
 
         numberOfQuestions++;
@@ -305,7 +340,7 @@ public class GameFragment extends Fragment {
     }
 
     public void doTimer(int miliseconds) {
-        myTimer = new CountDownTimer(miliseconds, 1000) {
+        myTimer = new CountDownTimer(miliseconds*1000, 1000) {
             final TextView timer = (TextView) rootView.findViewById(R.id.time);
 
             public void onTick(long millisUntilFinished) {
@@ -718,12 +753,12 @@ public class GameFragment extends Fragment {
 
     }
 
-    public void restoreNumberOfQuestions(String numberOfQuestionsReached){
+    public void restoreNumberOfQuestions(String numberOfQuestionsReached) {
         int number = Integer.parseInt(numberOfQuestionsReached);
         numberOfQuestions = number;
     }
 
-    public void restoreSwitch(String switchChange){
+    public void restoreSwitch(String switchChange) {
         boolean switchState = Boolean.parseBoolean(switchChange);
         Switch mySwitch = (Switch) rootView.findViewById(R.id.hints);
         mySwitch.setChecked(switchState);
@@ -817,8 +852,6 @@ public class GameFragment extends Fragment {
     public void restoreTime(String time) {
         TextView Time = (TextView) rootView.findViewById(R.id.time);
         Time.setText(time);
-
-        //todo need to add here for example myTimer(8).start();
     }
 
     public void restoreUserAnswer(String answer) {
