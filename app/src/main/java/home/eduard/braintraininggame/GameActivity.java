@@ -22,14 +22,11 @@ public class GameActivity extends Activity {
 
         View root = findViewById(android.R.id.content);
 
-
-
         mGameFragment = (GameFragment) getFragmentManager().findFragmentById(R.id.fragment_game);
 
         boolean restore = getIntent().getBooleanExtra(KEY_RESTORE, false);
         if (restore) {
             mGameFragment.setContinueGame(true);
-            Log.d("Continue", "Continue = " + mGameFragment.isContinueGame());
 
             String gameData = getPreferences(MODE_PRIVATE)
                     .getString(PREF_RESTORE, null);
@@ -39,7 +36,6 @@ public class GameActivity extends Activity {
 
         }else{
             mGameFragment.setContinueGame(false);
-            Log.d("New Game", "Continue = " + mGameFragment.isContinueGame());
 
             String intentVal = getIntent().getStringExtra("DIFFICULTY");
 
@@ -61,17 +57,12 @@ public class GameActivity extends Activity {
             txt.setText(Integer.toString(level));
             //this will save the level chosen in an invisible text field
         }
-        Log.d("BTG", "restore = " + restore);
-
-
 
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-
-        Log.d("BTG", "pause activity");
 
         CountDownTimer timer = mGameFragment.getMyTimer();
         if(timer!=null) timer.cancel();

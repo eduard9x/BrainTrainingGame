@@ -243,12 +243,8 @@ public class GameFragment extends Fragment {
                 String timeOnScreen = (String) timeLabel.getText();
                 int time = Integer.parseInt(timeOnScreen.substring(0, timeOnScreen.indexOf(" ")));
 
-                Log.d("Time", "time = " + time);
-                Log.d("Fragment", "Continue = " + isContinueGame());
-
                 CountDownTimer timer = getMyTimer();
                 if (timer != null) timer.cancel();
-
 
                 if (isContinueGame()) {
                     if (!anyVisible()) {
@@ -257,16 +253,9 @@ public class GameFragment extends Fragment {
                 } else {
                     doTimer(time);
                 }
-
-                /* todo in here, the continue is true, so I can add a switch or something to make sure
-                ** I have some kind of behaviour on continue and a different one in the new game.
-                */
-
             }
         });
         //endregion
-
-//        doTimer();
 
         return rootView;
     }
@@ -315,14 +304,10 @@ public class GameFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-
-        // Get rid of the about dialog if it's still up
-        if (mDialog != null)
-            mDialog.dismiss();
+        //I don't want to close any open dialog as I want it to be there on resume.
     }
 
     public int compareAnswer() {
-
         int userAnswer;
 
         TextView ans = (TextView) rootView.findViewById(R.id.user_answer);
@@ -333,7 +318,6 @@ public class GameFragment extends Fragment {
         //1 because I want to skip the '=' sign
 
         int goodAnswer = Integer.parseInt((String) goodAns.getText());
-//        System.out.println("Good answer: " + goodAnswer);
 
         userAnswer = Integer.parseInt(userAnswerRough);
 
@@ -445,7 +429,6 @@ public class GameFragment extends Fragment {
         buttonHash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("hash event:" + hashEvent);
                 if (isProperAnswer()) {
                     //compare the answer with the correct one
                     int result = compareAnswer();
@@ -455,6 +438,7 @@ public class GameFragment extends Fragment {
                     //check if the result is good and display the proper message
                     doResults(result);
                     //using this to make sure the game will send a pop-up message at the end of 10th question
+
                     switch (numberOfQuestions) {
                         case questionsAvailable:
                             doEnding();
@@ -476,12 +460,19 @@ public class GameFragment extends Fragment {
         buttonHash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("hash event:" + hashEvent);
                 if (isProperAnswer()) {
-                    //need to start a new question
-                    goNextQuestion();
-                    //change the event to the first one
-                    setButtonHash1();
+
+                    switch (numberOfQuestions) {
+                        case questionsAvailable:
+                            doEnding();
+                            break;
+                        default:
+                            //need to start a new question
+                            goNextQuestion();
+                            //change the event to the first one
+                            setButtonHash1();
+                            break;
+                    }
                 }
             }
         });
@@ -493,7 +484,6 @@ public class GameFragment extends Fragment {
         buttonHash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("hash event:" + hashEvent);
                 if (isProperAnswer()) {
 
                     int result = compareAnswer();
@@ -529,12 +519,20 @@ public class GameFragment extends Fragment {
         buttonHash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("hash event:" + hashEvent);
                 if (isProperAnswer()) {
-                    //need to start a new question
-                    goNextQuestion();
-                    //change the event to the one that allows hints
-                    setButtonHash3();
+
+                    switch (numberOfQuestions) {
+                        case questionsAvailable:
+                            doEnding();
+                            break;
+                        default:
+                            //need to start a new question
+                            goNextQuestion();
+                            //change the event to the one that allows hints
+                            setButtonHash3();
+                            break;
+                    }
+
                 }
             }
         });
@@ -648,6 +646,7 @@ public class GameFragment extends Fragment {
     public String getState() {
         StringBuilder builder = new StringBuilder();
 
+        //region Save the previous state values to a string
         TextView myView = (TextView) rootView.findViewById(R.id.guess);
         String myString = (String) myView.getText();
 
@@ -724,7 +723,7 @@ public class GameFragment extends Fragment {
 
         builder.append(myString);
         builder.append(',');
-
+        //endregion
 
         return builder.toString();
     }
@@ -736,6 +735,7 @@ public class GameFragment extends Fragment {
         String[] fields = gameData.split(",");
         int index = 0;
 
+        //region Getting the previous state
         String question = fields[index];
         index++;
         String level = fields[index];
@@ -762,7 +762,8 @@ public class GameFragment extends Fragment {
         index++;
         String numberOfQuestionsReached = fields[index];
         index++;
-
+        //endregion
+        //region Setting back to the previous state
         restoreQuestion(question);
         restoreLevel(level);
         restoreScore(score);
@@ -776,6 +777,7 @@ public class GameFragment extends Fragment {
         restoreSwitch(switchChange);
         restoreNumberOfQuestions(numberOfQuestionsReached);
         restoreTime(time);
+        //endregion
     }
 
     public void restoreNumberOfQuestions(String numberOfQuestionsReached) {
@@ -818,7 +820,6 @@ public class GameFragment extends Fragment {
                 greaterView.setVisibility(View.INVISIBLE);
                 break;
         }
-
     }
 
     public void restoreWrong(String wrongVisibility) {
@@ -834,7 +835,6 @@ public class GameFragment extends Fragment {
                 wrongView.setVisibility(View.INVISIBLE);
                 break;
         }
-
     }
 
     public void restoreCorrect(String correctVisibility) {
@@ -903,24 +903,8 @@ public class GameFragment extends Fragment {
         lvl.setText(level);
     }
 
-    public void setNumberOfQuestions(int numberOfQuestions) {
-        this.numberOfQuestions = numberOfQuestions;
-    }
-
-    public int getNumberOfQuestions() {
-        return numberOfQuestions;
-    }
-
     public CountDownTimer getMyTimer() {
         return myTimer;
-    }
-
-    public int getHashEvent() {
-        return hashEvent;
-    }
-
-    public void setHashEvent(int hashEvent) {
-        this.hashEvent = hashEvent;
     }
 
     public boolean isContinueGame() {

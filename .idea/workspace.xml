@@ -34,8 +34,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/GameActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/GameActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/GameFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/GameFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/MainFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/MainFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/display.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/display.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BrainTrainingGame.iws" />
@@ -56,111 +54,7 @@
     <favorites_list name="BrainTrainingGame" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="GameFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/GameFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="777" column="26" selection-start-line="777" selection-start-column="26" selection-end-line="777" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2568#2584#0" expanded="false" />
-                <element signature="e#2620#3051#0" expanded="true" />
-                <element signature="e#3050#3051#0" expanded="true" />
-                <element signature="e#3082#3098#0" expanded="false" />
-                <element signature="e#3134#3565#0" expanded="true" />
-                <element signature="e#3564#3565#0" expanded="true" />
-                <element signature="e#3596#3612#0" expanded="false" />
-                <element signature="e#3648#4079#0" expanded="true" />
-                <element signature="e#4078#4079#0" expanded="true" />
-                <element signature="e#4110#4126#0" expanded="false" />
-                <element signature="e#4162#4593#0" expanded="true" />
-                <element signature="e#4592#4593#0" expanded="true" />
-                <element signature="e#4624#4640#0" expanded="false" />
-                <element signature="e#4676#5107#0" expanded="true" />
-                <element signature="e#5106#5107#0" expanded="true" />
-                <element signature="e#5138#5154#0" expanded="false" />
-                <element signature="e#5190#5621#0" expanded="true" />
-                <element signature="e#5620#5621#0" expanded="true" />
-                <element signature="e#5652#5668#0" expanded="false" />
-                <element signature="e#5704#6135#0" expanded="true" />
-                <element signature="e#6134#6135#0" expanded="true" />
-                <element signature="e#6166#6182#0" expanded="false" />
-                <element signature="e#6218#6649#0" expanded="true" />
-                <element signature="e#6648#6649#0" expanded="true" />
-                <element signature="e#6680#6696#0" expanded="false" />
-                <element signature="e#6732#7163#0" expanded="true" />
-                <element signature="e#7162#7163#0" expanded="true" />
-                <element signature="e#7194#7210#0" expanded="false" />
-                <element signature="e#7246#7677#0" expanded="true" />
-                <element signature="e#7676#7677#0" expanded="true" />
-                <element signature="e#7708#7726#0" expanded="false" />
-                <element signature="e#7764#8270#0" expanded="true" />
-                <element signature="e#8269#8270#0" expanded="true" />
-                <element signature="e#8301#8321#0" expanded="false" />
-                <element signature="e#8361#8754#0" expanded="true" />
-                <element signature="e#8753#8754#0" expanded="true" />
-                <element signature="e#8785#8805#0" expanded="false" />
-                <element signature="e#8928#9431#0" expanded="true" />
-                <element signature="e#9430#9431#0" expanded="true" />
-                <element signature="e#9523#10995#0" expanded="true" />
-                <element signature="e#10994#10995#0" expanded="true" />
-                <element signature="e#32953#32954#0" expanded="true" />
-                <element signature="e#32988#32989#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-              <folding>
-                <element signature="e#389#390#0" expanded="true" />
-                <element signature="e#421#422#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainFragment.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/MainFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5217391">
-              <caret line="157" column="35" selection-start-line="157" selection-start-column="35" selection-end-line="157" selection-end-column="35" />
-              <folding>
-                <element signature="method#createIntent#0;class#MainFragment#0" expanded="false" />
-                <element signature="e#1518#1544#0" expanded="false" />
-                <element signature="e#2851#2877#0" expanded="false" />
-                <element signature="e#3264#3287#0" expanded="false" />
-                <element signature="e#4190#4212#0" expanded="false" />
-                <element signature="method#onPause#0;class#MainFragment#0" expanded="false" />
-                <element signature="e#7027#7028#0" expanded="true" />
-                <element signature="e#7077#7078#0" expanded="true" />
-                <element signature="e#7112#7113#0" expanded="true" />
-                <element signature="e#7143#7144#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/GameActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="73" column="39" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2806#2807#0" expanded="true" />
-                <element signature="e#2838#2839#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -1750,9 +1644,9 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/display.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/GameActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/GameFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/MainFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/GameFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/GameActivity.java" />
       </list>
     </option>
   </component>
@@ -1795,7 +1689,10 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1871,6 +1768,10 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="braintraininggame" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1906,9 +1807,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2119,12 +2017,11 @@
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298969" sideWeight="0.49527186" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32842416" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.51840943" sideWeight="0.49124423" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51840943" sideWeight="0.49124423" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39911634" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940899" sideWeight="0.5125184" order="2" side_tool="true" content_ui="tabs" />
@@ -2139,12 +2036,13 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26175115" sideWeight="0.4874816" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26175115" sideWeight="0.4874816" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32842416" sideWeight="0.49054372" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
     </layout>
@@ -2153,15 +2051,15 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51840943" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32842416" sideWeight="0.50472814" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24940899" sideWeight="0.4874816" order="5" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32842416" sideWeight="0.49527186" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2176,8 +2074,8 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32842416" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -2194,60 +2092,77 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="43" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/display.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="53" column="55" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
-          <folding />
+          <folding>
+            <element signature="e#531#553#0" expanded="true" />
+            <element signature="e#579#602#0" expanded="true" />
+            <element signature="e#866#881#0" expanded="true" />
+            <element signature="e#956#979#0" expanded="true" />
+            <element signature="e#1425#1446#0" expanded="true" />
+            <element signature="e#1472#1495#0" expanded="true" />
+            <element signature="e#1578#1604#0" expanded="true" />
+            <element signature="e#1803#1824#0" expanded="true" />
+            <element signature="e#1857#1880#0" expanded="true" />
+            <element signature="e#1906#1930#0" expanded="true" />
+            <element signature="e#2013#2039#0" expanded="true" />
+            <element signature="e#2325#2342#0" expanded="true" />
+            <element signature="e#2462#2488#0" expanded="true" />
+            <element signature="e#2791#2806#0" expanded="true" />
+            <element signature="e#2924#2950#0" expanded="true" />
+            <element signature="e#3257#3276#0" expanded="true" />
+            <element signature="e#3362#3388#0" expanded="true" />
+            <element signature="e#3698#3720#0" expanded="true" />
+            <element signature="e#3804#3830#0" expanded="true" />
+            <element signature="e#4108#4129#0" expanded="true" />
+            <element signature="e#4439#4461#0" expanded="true" />
+            <element signature="e#4768#4787#0" expanded="true" />
+            <element signature="e#5089#5121#0" expanded="true" />
+            <element signature="e#5196#5222#0" expanded="true" />
+            <element signature="e#5485#5507#0" expanded="true" />
+            <element signature="e#5582#5608#0" expanded="true" />
+          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_game.xml">
-      <provider selected="true" editor-type-id="android-designer">
+      <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_game.xml">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/keypad.xml">
-      <provider editor-type-id="android-designer">
+      <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/keypad.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="63" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="63" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
@@ -2277,50 +2192,64 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1230#1251#0" expanded="false" />
             <element signature="e#2568#2584#0" expanded="false" />
             <element signature="e#2620#3051#0" expanded="true" />
             <element signature="e#3050#3051#0" expanded="true" />
             <element signature="e#3082#3098#0" expanded="false" />
-            <element signature="e#3134#3565#0" expanded="true" />
-            <element signature="e#3564#3565#0" expanded="true" />
             <element signature="e#3596#3612#0" expanded="false" />
-            <element signature="e#3648#4079#0" expanded="true" />
-            <element signature="e#4078#4079#0" expanded="true" />
             <element signature="e#4110#4126#0" expanded="false" />
-            <element signature="e#4162#4593#0" expanded="true" />
-            <element signature="e#4592#4593#0" expanded="true" />
             <element signature="e#4624#4640#0" expanded="false" />
-            <element signature="e#4676#5107#0" expanded="true" />
-            <element signature="e#5106#5107#0" expanded="true" />
             <element signature="e#5138#5154#0" expanded="false" />
-            <element signature="e#5190#5621#0" expanded="true" />
-            <element signature="e#5620#5621#0" expanded="true" />
             <element signature="e#5652#5668#0" expanded="false" />
-            <element signature="e#5704#6135#0" expanded="true" />
-            <element signature="e#6134#6135#0" expanded="true" />
             <element signature="e#6166#6182#0" expanded="false" />
-            <element signature="e#6218#6649#0" expanded="true" />
-            <element signature="e#6648#6649#0" expanded="true" />
             <element signature="e#6680#6696#0" expanded="false" />
-            <element signature="e#6732#7163#0" expanded="true" />
-            <element signature="e#7162#7163#0" expanded="true" />
             <element signature="e#7194#7210#0" expanded="false" />
-            <element signature="e#7246#7677#0" expanded="true" />
-            <element signature="e#7676#7677#0" expanded="true" />
             <element signature="e#7708#7726#0" expanded="false" />
-            <element signature="e#7764#8270#0" expanded="true" />
-            <element signature="e#8269#8270#0" expanded="true" />
             <element signature="e#8301#8321#0" expanded="false" />
             <element signature="e#8361#8754#0" expanded="true" />
             <element signature="e#8753#8754#0" expanded="true" />
             <element signature="e#8785#8805#0" expanded="false" />
+            <element signature="e#8860#8880#0" expanded="false" />
             <element signature="e#8928#9431#0" expanded="true" />
             <element signature="e#9430#9431#0" expanded="true" />
-            <element signature="e#9523#10995#0" expanded="true" />
-            <element signature="e#10994#10995#0" expanded="true" />
-            <element signature="e#32953#32954#0" expanded="true" />
-            <element signature="e#32988#32989#0" expanded="true" />
+            <element signature="e#9462#9483#0" expanded="false" />
+            <element signature="e#9523#10653#0" expanded="true" />
+            <element signature="e#10652#10653#0" expanded="true" />
+            <element signature="method#makeWrongVisible#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#makeWrongLess#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#makeWrongGreater#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#setButtonHash1#0;class#GameFragment#0" expanded="false" />
+            <element signature="e#17054#18188#0" expanded="true" />
+            <element signature="e#18187#18188#0" expanded="true" />
+            <element signature="method#setButtonHash2#0;class#GameFragment#0" expanded="false" />
+            <element signature="e#18295#18951#0" expanded="true" />
+            <element signature="e#18950#18951#0" expanded="true" />
+            <element signature="method#setButtonHash3#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#setButtonHash4#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#isProperAnswer#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#doResults#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#doResultsWithHints#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#anyVisible#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#doEnding#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#getState#0;class#GameFragment#0" expanded="false" />
+            <element signature="e#24711#24762#0" expanded="false" />
+            <element signature="method#putState#0;class#GameFragment#0" expanded="false" />
+            <element signature="e#27350#27385#0" expanded="false" />
+            <element signature="e#28213#28256#0" expanded="false" />
+            <element signature="method#restoreNumberOfQuestions#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreSwitch#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreWrong#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreCorrect#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreHashListener#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreGoodAnswer#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreTime#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreUserAnswer#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreScore#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreQuestion#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreLevel#0;class#GameFragment#0" expanded="false" />
+            <element signature="e#32624#32625#0" expanded="true" />
+            <element signature="e#32654#32655#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2333,13 +2262,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_game.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/GameActivity.java">
@@ -2362,62 +2291,76 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="63" selection-start-line="17" selection-start-column="63" selection-end-line="17" selection-end-column="63" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1230#1251#0" expanded="false" />
             <element signature="e#2568#2584#0" expanded="false" />
             <element signature="e#2620#3051#0" expanded="true" />
             <element signature="e#3050#3051#0" expanded="true" />
             <element signature="e#3082#3098#0" expanded="false" />
-            <element signature="e#3134#3565#0" expanded="true" />
-            <element signature="e#3564#3565#0" expanded="true" />
             <element signature="e#3596#3612#0" expanded="false" />
-            <element signature="e#3648#4079#0" expanded="true" />
-            <element signature="e#4078#4079#0" expanded="true" />
             <element signature="e#4110#4126#0" expanded="false" />
-            <element signature="e#4162#4593#0" expanded="true" />
-            <element signature="e#4592#4593#0" expanded="true" />
             <element signature="e#4624#4640#0" expanded="false" />
-            <element signature="e#4676#5107#0" expanded="true" />
-            <element signature="e#5106#5107#0" expanded="true" />
             <element signature="e#5138#5154#0" expanded="false" />
-            <element signature="e#5190#5621#0" expanded="true" />
-            <element signature="e#5620#5621#0" expanded="true" />
             <element signature="e#5652#5668#0" expanded="false" />
-            <element signature="e#5704#6135#0" expanded="true" />
-            <element signature="e#6134#6135#0" expanded="true" />
             <element signature="e#6166#6182#0" expanded="false" />
-            <element signature="e#6218#6649#0" expanded="true" />
-            <element signature="e#6648#6649#0" expanded="true" />
             <element signature="e#6680#6696#0" expanded="false" />
-            <element signature="e#6732#7163#0" expanded="true" />
-            <element signature="e#7162#7163#0" expanded="true" />
             <element signature="e#7194#7210#0" expanded="false" />
-            <element signature="e#7246#7677#0" expanded="true" />
-            <element signature="e#7676#7677#0" expanded="true" />
             <element signature="e#7708#7726#0" expanded="false" />
-            <element signature="e#7764#8270#0" expanded="true" />
-            <element signature="e#8269#8270#0" expanded="true" />
             <element signature="e#8301#8321#0" expanded="false" />
             <element signature="e#8361#8754#0" expanded="true" />
             <element signature="e#8753#8754#0" expanded="true" />
             <element signature="e#8785#8805#0" expanded="false" />
+            <element signature="e#8860#8880#0" expanded="false" />
             <element signature="e#8928#9431#0" expanded="true" />
             <element signature="e#9430#9431#0" expanded="true" />
-            <element signature="e#9523#10995#0" expanded="true" />
-            <element signature="e#10994#10995#0" expanded="true" />
-            <element signature="e#32953#32954#0" expanded="true" />
-            <element signature="e#32988#32989#0" expanded="true" />
+            <element signature="e#9462#9483#0" expanded="false" />
+            <element signature="e#9523#10653#0" expanded="true" />
+            <element signature="e#10652#10653#0" expanded="true" />
+            <element signature="method#makeWrongVisible#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#makeWrongLess#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#makeWrongGreater#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#setButtonHash1#0;class#GameFragment#0" expanded="false" />
+            <element signature="e#17054#18188#0" expanded="true" />
+            <element signature="e#18187#18188#0" expanded="true" />
+            <element signature="method#setButtonHash2#0;class#GameFragment#0" expanded="false" />
+            <element signature="e#18295#18951#0" expanded="true" />
+            <element signature="e#18950#18951#0" expanded="true" />
+            <element signature="method#setButtonHash3#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#setButtonHash4#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#isProperAnswer#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#doResults#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#doResultsWithHints#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#anyVisible#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#doEnding#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#getState#0;class#GameFragment#0" expanded="false" />
+            <element signature="e#24711#24762#0" expanded="false" />
+            <element signature="method#putState#0;class#GameFragment#0" expanded="false" />
+            <element signature="e#27350#27385#0" expanded="false" />
+            <element signature="e#28213#28256#0" expanded="false" />
+            <element signature="method#restoreNumberOfQuestions#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreSwitch#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreWrong#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreCorrect#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreHashListener#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreGoodAnswer#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreTime#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreUserAnswer#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreScore#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreQuestion#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreLevel#0;class#GameFragment#0" expanded="false" />
+            <element signature="e#32624#32625#0" expanded="true" />
+            <element signature="e#32654#32655#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_game.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/GameActivity.java">
@@ -2511,13 +2454,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="43" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="43" />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
@@ -2528,13 +2471,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.551724">
           <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/local.properties">
@@ -2555,17 +2498,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/Question.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1981567">
-          <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
-          <folding>
-            <element signature="e#3663#3664#0" expanded="true" />
-            <element signature="e#3692#3693#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2591,23 +2523,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/keypad.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.7586207">
           <caret line="15" column="88" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="88" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_game.xml">
-      <provider selected="true" editor-type-id="android-designer">
+      <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_game.xml">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
@@ -2618,13 +2550,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/start.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.137931">
           <caret line="8" column="62" selection-start-line="8" selection-start-column="62" selection-end-line="8" selection-end-column="62" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
@@ -2635,21 +2567,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_game.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
           <folding />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2662,9 +2593,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/display.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49356914">
           <caret line="127" column="34" selection-start-line="127" selection-start-column="25" selection-end-line="127" selection-end-column="34" />
@@ -2698,6 +2626,9 @@
           </folding>
         </state>
       </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-23/android/content/SharedPreferences.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -2707,97 +2638,140 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/GameFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/Question.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="777" column="26" selection-start-line="777" selection-start-column="26" selection-end-line="777" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.20737328">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2568#2584#0" expanded="false" />
-            <element signature="e#2620#3051#0" expanded="true" />
-            <element signature="e#3050#3051#0" expanded="true" />
-            <element signature="e#3082#3098#0" expanded="false" />
-            <element signature="e#3134#3565#0" expanded="true" />
-            <element signature="e#3564#3565#0" expanded="true" />
-            <element signature="e#3596#3612#0" expanded="false" />
-            <element signature="e#3648#4079#0" expanded="true" />
-            <element signature="e#4078#4079#0" expanded="true" />
-            <element signature="e#4110#4126#0" expanded="false" />
-            <element signature="e#4162#4593#0" expanded="true" />
-            <element signature="e#4592#4593#0" expanded="true" />
-            <element signature="e#4624#4640#0" expanded="false" />
-            <element signature="e#4676#5107#0" expanded="true" />
-            <element signature="e#5106#5107#0" expanded="true" />
-            <element signature="e#5138#5154#0" expanded="false" />
-            <element signature="e#5190#5621#0" expanded="true" />
-            <element signature="e#5620#5621#0" expanded="true" />
-            <element signature="e#5652#5668#0" expanded="false" />
-            <element signature="e#5704#6135#0" expanded="true" />
-            <element signature="e#6134#6135#0" expanded="true" />
-            <element signature="e#6166#6182#0" expanded="false" />
-            <element signature="e#6218#6649#0" expanded="true" />
-            <element signature="e#6648#6649#0" expanded="true" />
-            <element signature="e#6680#6696#0" expanded="false" />
-            <element signature="e#6732#7163#0" expanded="true" />
-            <element signature="e#7162#7163#0" expanded="true" />
-            <element signature="e#7194#7210#0" expanded="false" />
-            <element signature="e#7246#7677#0" expanded="true" />
-            <element signature="e#7676#7677#0" expanded="true" />
-            <element signature="e#7708#7726#0" expanded="false" />
-            <element signature="e#7764#8270#0" expanded="true" />
-            <element signature="e#8269#8270#0" expanded="true" />
-            <element signature="e#8301#8321#0" expanded="false" />
-            <element signature="e#8361#8754#0" expanded="true" />
-            <element signature="e#8753#8754#0" expanded="true" />
-            <element signature="e#8785#8805#0" expanded="false" />
-            <element signature="e#8928#9431#0" expanded="true" />
-            <element signature="e#9430#9431#0" expanded="true" />
-            <element signature="e#9523#10995#0" expanded="true" />
-            <element signature="e#10994#10995#0" expanded="true" />
-            <element signature="e#32953#32954#0" expanded="true" />
-            <element signature="e#32988#32989#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/GameActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="39" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2806#2807#0" expanded="true" />
-            <element signature="e#2838#2839#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-          <folding>
-            <element signature="e#389#390#0" expanded="true" />
-            <element signature="e#421#422#0" expanded="true" />
+            <element signature="method#Question#0;class#Question#0" expanded="false" />
+            <element signature="method#start#0;class#Question#0" expanded="false" />
+            <element signature="method#novice#0;class#Question#0" expanded="false" />
+            <element signature="method#easy#0;class#Question#0" expanded="false" />
+            <element signature="method#medium#0;class#Question#0" expanded="false" />
+            <element signature="method#guru#0;class#Question#0" expanded="false" />
+            <element signature="method#createChallenge#0;class#Question#0" expanded="false" />
+            <element signature="method#generateNumber#0;class#Question#0" expanded="false" />
+            <element signature="method#doAnswer#0;class#Question#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/MainFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5217391">
-          <caret line="157" column="35" selection-start-line="157" selection-start-column="35" selection-end-line="157" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.115207374">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
+            <element signature="method#onCreateView#0;class#MainFragment#0" expanded="false" />
             <element signature="method#createIntent#0;class#MainFragment#0" expanded="false" />
-            <element signature="e#1518#1544#0" expanded="false" />
-            <element signature="e#2851#2877#0" expanded="false" />
-            <element signature="e#3264#3287#0" expanded="false" />
-            <element signature="e#4190#4212#0" expanded="false" />
+            <element signature="e#1161#1182#0" expanded="false" />
+            <element signature="e#1491#1517#0" expanded="false" />
+            <element signature="e#2826#2852#0" expanded="false" />
+            <element signature="e#3242#3265#0" expanded="false" />
+            <element signature="e#3712#3729#0" expanded="true" />
+            <element signature="e#4168#4190#0" expanded="false" />
+            <element signature="e#4229#6251#0" expanded="true" />
+            <element signature="e#4524#4545#0" expanded="true" />
+            <element signature="e#4590#4607#0" expanded="true" />
+            <element signature="e#6250#6251#0" expanded="true" />
+            <element signature="e#6282#6328#0" expanded="false" />
             <element signature="method#onPause#0;class#MainFragment#0" expanded="false" />
-            <element signature="e#7027#7028#0" expanded="true" />
-            <element signature="e#7077#7078#0" expanded="true" />
-            <element signature="e#7112#7113#0" expanded="true" />
-            <element signature="e#7143#7144#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20737328">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding>
+            <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/GameFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16129032">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          <folding>
+            <element signature="e#1230#1251#0" expanded="false" />
+            <element signature="e#2568#2584#0" expanded="false" />
+            <element signature="e#2620#3051#0" expanded="true" />
+            <element signature="e#3050#3051#0" expanded="true" />
+            <element signature="e#3082#3098#0" expanded="false" />
+            <element signature="e#3596#3612#0" expanded="false" />
+            <element signature="e#4110#4126#0" expanded="false" />
+            <element signature="e#4624#4640#0" expanded="false" />
+            <element signature="e#5138#5154#0" expanded="false" />
+            <element signature="e#5652#5668#0" expanded="false" />
+            <element signature="e#6166#6182#0" expanded="false" />
+            <element signature="e#6680#6696#0" expanded="false" />
+            <element signature="e#7194#7210#0" expanded="false" />
+            <element signature="e#7708#7726#0" expanded="false" />
+            <element signature="e#8301#8321#0" expanded="false" />
+            <element signature="e#8361#8754#0" expanded="true" />
+            <element signature="e#8753#8754#0" expanded="true" />
+            <element signature="e#8785#8805#0" expanded="false" />
+            <element signature="e#8860#8880#0" expanded="false" />
+            <element signature="e#8928#9431#0" expanded="true" />
+            <element signature="e#9430#9431#0" expanded="true" />
+            <element signature="e#9462#9483#0" expanded="false" />
+            <element signature="e#9523#10653#0" expanded="true" />
+            <element signature="e#10652#10653#0" expanded="true" />
+            <element signature="method#makeWrongVisible#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#makeWrongLess#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#makeWrongGreater#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#setButtonHash1#0;class#GameFragment#0" expanded="false" />
+            <element signature="e#17054#18188#0" expanded="true" />
+            <element signature="e#18187#18188#0" expanded="true" />
+            <element signature="method#setButtonHash2#0;class#GameFragment#0" expanded="false" />
+            <element signature="e#18295#18951#0" expanded="true" />
+            <element signature="e#18950#18951#0" expanded="true" />
+            <element signature="method#setButtonHash3#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#setButtonHash4#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#isProperAnswer#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#doResults#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#doResultsWithHints#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#anyVisible#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#doEnding#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#getState#0;class#GameFragment#0" expanded="false" />
+            <element signature="e#24711#24762#0" expanded="false" />
+            <element signature="method#putState#0;class#GameFragment#0" expanded="false" />
+            <element signature="e#27350#27385#0" expanded="false" />
+            <element signature="e#28213#28256#0" expanded="false" />
+            <element signature="method#restoreNumberOfQuestions#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreSwitch#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreWrong#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreCorrect#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreHashListener#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreGoodAnswer#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreTime#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreUserAnswer#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreScore#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreQuestion#0;class#GameFragment#0" expanded="false" />
+            <element signature="method#restoreLevel#0;class#GameFragment#0" expanded="false" />
+            <element signature="e#32624#32625#0" expanded="true" />
+            <element signature="e#32654#32655#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/home/eduard/braintraininggame/ApplicationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16129032">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/home/eduard/braintraininggame/GameActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41474655">
+          <caret line="18" column="55" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#onCreate#0;class#GameActivity#0" expanded="false" />
+            <element signature="method#onPause#0;class#GameActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>

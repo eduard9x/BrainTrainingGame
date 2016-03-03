@@ -17,7 +17,6 @@ import android.widget.TextView;
 public class MainFragment extends Fragment {
 
     private AlertDialog mDialog;
-    private boolean saveGame;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -28,13 +27,13 @@ public class MainFragment extends Fragment {
         return rootView;
     }
 
-    void createIntent(int difficulty){
+    void createIntent(int difficulty) {
         Intent intent_difficulty = new Intent(getActivity(), GameActivity.class);
-        intent_difficulty.putExtra("DIFFICULTY",Integer.toString(difficulty));
+        intent_difficulty.putExtra("DIFFICULTY", Integer.toString(difficulty));
         getActivity().startActivity(intent_difficulty);
     }
 
-    public void initViews(final View rootView){
+    public void initViews(final View rootView) {
         //region Declarations
         View newGameButton = rootView.findViewById(R.id.new_button);
         View continueButton = rootView.findViewById(R.id.continue_button);
@@ -42,9 +41,9 @@ public class MainFragment extends Fragment {
         View exitButton = rootView.findViewById(R.id.exit_button);
         //endregion
         //region New game listener
-        newGameButton.setOnClickListener(new View.OnClickListener(){
+        newGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
 
                 AlertDialog.Builder builder =
                         new AlertDialog.Builder(getActivity());
@@ -74,11 +73,11 @@ public class MainFragment extends Fragment {
         });
         //endregion
         //region Continue listener
-        continueButton.setOnClickListener(new View.OnClickListener(){
+        continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), GameActivity.class);
-                intent.putExtra(GameActivity.KEY_RESTORE,true);
+                intent.putExtra(GameActivity.KEY_RESTORE, true);
                 getActivity().startActivity(intent);
             }
         });
@@ -119,11 +118,9 @@ public class MainFragment extends Fragment {
                             @Override
                             public void onClick(DialogInterface dialogInterface,
                                                 int i) {
-                                Log.d("Save stage", "Saving the stage of this game.");
-
                                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
                                 SharedPreferences.Editor editor = preferences.edit();
-                                editor.putString("Save Game","True");
+                                editor.putString("Save Game", "True");
                                 editor.apply();
 
                                 getActivity().finish();
@@ -138,7 +135,7 @@ public class MainFragment extends Fragment {
 
                                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
                                 SharedPreferences.Editor editor = preferences.edit();
-                                editor.putString("Save Game","False");
+                                editor.putString("Save Game", "False");
                                 editor.apply();
 
                                 getActivity().finish();
@@ -150,22 +147,19 @@ public class MainFragment extends Fragment {
             }
         });
         //endregion
-
+        //region Using shared preferences to save game
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
         String name = preferences.getString("Save Game", "");
-        if(!name.equalsIgnoreCase(""))
-        {
-            System.out.println(name);
-           if(name.equals("True")) continueButton.setEnabled(true);
+        if (!name.equalsIgnoreCase("")) {
+            if (name.equals("True")) continueButton.setEnabled(true);
             else continueButton.setEnabled(false);
         }
-
+        //endregion
     }
 
     @Override
     public void onPause() {
         super.onPause();
-
         // Get rid of the about dialog if it's still up
         if (mDialog != null)
             mDialog.dismiss();
@@ -174,9 +168,5 @@ public class MainFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
-
-    public boolean isSaveGame() {
-        return saveGame;
     }
 }
