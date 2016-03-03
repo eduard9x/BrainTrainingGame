@@ -51,7 +51,7 @@ public class Question {
     }
 
     public void guru() {
-        double number = Math.floor(Math.random() * 5 + 2);
+        double number = Math.floor(Math.random() * 3 + 4);
         howManyNumbers = (int) number;
         createChallenge(howManyNumbers);
     }
