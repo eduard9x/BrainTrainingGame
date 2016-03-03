@@ -150,9 +150,13 @@ public class MainFragment extends Fragment {
         //region Using shared preferences to save game
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
         String name = preferences.getString("Save Game", "");
+
         if (!name.equalsIgnoreCase("")) {
             if (name.equals("True")) continueButton.setEnabled(true);
             else continueButton.setEnabled(false);
+        }else{
+            //this is the first run of the game when continue should be disabled because there is no previous state saved
+            continueButton.setEnabled(false);
         }
         //endregion
     }
